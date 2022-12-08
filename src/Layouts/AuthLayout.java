@@ -2,12 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Layout;
+package Layouts;
 
 import Auth.SignInForm;
 import Auth.SignUpForm;
+import Controllers.LayoutController;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,16 +20,16 @@ public class AuthLayout extends javax.swing.JPanel {
     /**
      * Creates new form LoginLayout
      */
-    private SignUpForm signup;
-    private SignInForm signin;
+    private LayoutController main;
 
     public AuthLayout() {
-        signup = new SignUpForm(this);
-        signin = new SignInForm(this);
+        this(null);
+    }
+
+    public AuthLayout(LayoutController main) {
+        this.main = main;
         initComponents();
         ScaleImg();
-
-        this.SignIn();
     }
 
     public void ScaleImg() {
@@ -39,18 +41,8 @@ public class AuthLayout extends javax.swing.JPanel {
         jLabel2.setIcon(scaledIcon);
     }
 
-    public void SignUp() {
-        jPanel1.removeAll();
-        jPanel1.add(this.signup);
-        jPanel1.repaint();
-        jPanel1.revalidate();
-    }
-
-    public void SignIn() {
-        jPanel1.removeAll();
-        jPanel1.add(this.signin);
-        jPanel1.repaint();
-        jPanel1.revalidate();
+    public JPanel getPanel() {
+        return this.jPanel1;
     }
 
     /**
@@ -93,7 +85,7 @@ public class AuthLayout extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(241, 241, 241)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addContainerGap(772, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,4 +107,5 @@ public class AuthLayout extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -26,4 +26,8 @@ public class UserModel {
             System.out.println("err");
         }
     }
+    
+//    public void addUser() {
+//        String sql = "INSERT INTO users"
+//    }
 }

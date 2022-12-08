@@ -4,7 +4,7 @@
  */
 package Auth;
 
-import Layout.AuthLayout;
+import Controllers.AuthController;
 
 /**
  *
@@ -15,13 +15,15 @@ public class SignUpForm extends javax.swing.JPanel {
     /**
      * Creates new form SignUpForm
      */
-    private AuthLayout layout;
+    private AuthController controller;
+
     public SignUpForm() {
         initComponents();
     }
-    public SignUpForm(AuthLayout layout) {
+
+    public SignUpForm(AuthController controller) {
         initComponents();
-        this.layout = layout;
+        this.controller = controller;
     }
 
     /**
@@ -154,11 +156,13 @@ public class SignUpForm extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.controller.SignIn(jTextField2.getText(), jTextField1.getText(), jPasswordField1.getText(), jPasswordField2.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        this.layout.SignIn();
+//        this.layout.SignIn();
+        this.controller.changeRoute("signinform");
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
