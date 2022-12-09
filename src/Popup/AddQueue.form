@@ -160,6 +160,9 @@
                 <StringItem index="3" value="Item 4"/>
               </StringArray>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
@@ -181,6 +184,9 @@
                 <StringItem index="3" value="Item 4"/>
               </StringArray>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -192,6 +198,9 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Time"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
@@ -212,6 +221,9 @@
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="Detail"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
@@ -240,6 +252,9 @@
                 <StringItem index="2" value="Item 3"/>
                 <StringItem index="3" value="Item 4"/>
               </StringArray>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
             </Property>
           </Properties>
           <AuxValues>
