@@ -4,15 +4,17 @@
  */
 package GeneralClass;
 
+import java.io.Serializable;
+
 /**
  *
  * @author pongp
  */
-public class User {
+public class User implements Serializable {
 
     private String displayName;
     private String userName;
-    private transient String password;
+    private String password;
 
     public User(String displayName, String userName, String password) {
         this.displayName = displayName;

@@ -30,6 +30,11 @@ public class SignInForm extends javax.swing.JPanel {
         this.jLabel7.setText(err);
     }
 
+    public void clearForm() {
+        this.jTextField1.setText("");
+        this.jPasswordField1.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,6 +66,17 @@ public class SignInForm extends javax.swing.JPanel {
         jPanel3.add(jLabel1);
 
         jTextField1.setName(""); // NOI18N
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
+
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -153,6 +169,20 @@ public class SignInForm extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.controller.SignUp(jTextField1.getText(), jPasswordField1.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            this.controller.SignUp(jTextField1.getText(), jPasswordField1.getText());
+        }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            this.controller.SignUp(jTextField1.getText(), jPasswordField1.getText());
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,6 +4,8 @@
  */
 package Model;
 
+import Controllers.LayoutController;
+import GeneralClass.User;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,20 +59,20 @@ public class UserModel {
         return false;
     }
 
-    public boolean checkUsernameAndPassword(String username, String password) {
+    public User checkUsernameAndPassword(String username, String password) {
         try {
-            String sql = "SELECT username FROM users WHERE username = ? AND password = ?";
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
             PreparedStatement pre = Database.getConnection().prepareStatement(sql);
             pre.setString(1, username.toLowerCase());
             pre.setString(2, password);
             ResultSet rec = pre.executeQuery();
             if ((rec != null) && (rec.next())) {
-                return rec.getString("username").equals(username.toLowerCase());
+                return new User(rec.getString("displayName"), rec.getString("username"), rec.getString("password"));
             }
         } catch (SQLException ex) {
             System.out.println("err checkUsernameAndPassword");
         }
-        return false;
+        return null;
     }
 
     public ResultSet getUserByName(String username) {

@@ -5,6 +5,7 @@
 package Controllers;
 
 import Auth.*;
+import GeneralClass.User;
 import Layouts.AuthLayout;
 import Model.UserModel;
 import javax.swing.JPanel;
@@ -40,7 +41,11 @@ public class AuthController extends Router implements Controller {
     }
 
     public void SignUp(String username, String password) {
-        if (user.checkUsernameAndPassword(username, password)) {
+        signin.setError("");
+        User userLogin = user.checkUsernameAndPassword(username, password);
+        LayoutController.setUser(userLogin);
+        if (userLogin != null) {
+            this.signin.clearForm();
             layController.changeRoute("mainlayout");
         } else {
             signin.setError("Error: username or password is wrong");
@@ -58,8 +63,8 @@ public class AuthController extends Router implements Controller {
         } else if (!password.equals(confirmPassword)) {
             signup.setError("Error: password not match");
         } else {
-            System.out.println(displayName + " " + username + " " + password);
             user.addUser(username, displayName, password);
+            this.signup.clearForm();
             changeRoute("signinform");
         }
     }

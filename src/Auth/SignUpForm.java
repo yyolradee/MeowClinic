@@ -29,6 +29,13 @@ public class SignUpForm extends javax.swing.JPanel {
     public void setError(String err) {
         this.jLabel7.setText(err);
     }
+    
+    public void clearForm() {
+        this.jTextField1.setText("");
+        this.jTextField2.setText("");
+        this.jPasswordField1.setText("");
+        this.jPasswordField2.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
