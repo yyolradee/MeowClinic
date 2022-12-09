@@ -3,20 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projects/MeowClinic/src/Auth/SignInForm.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Images/logowhite.png</file>
-            <file>file:/D:/Projects/MeowClinic/src/Main.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controller/Router.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/GeneralClass/User.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Auth/SignUpForm.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Model/Database.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Layout/MainLayout.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controller/LayoutController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/View/MainView.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controller/MainController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Model/UserModel.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controller/AuthController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Layout/AuthLayout.java</file>
+            <file>file:/C:/Users/fresh/OneDrive/Documents/NetBeansProjects/MeowClinic/src/Pages/Page2.java</file>
+            <file>file:/C:/Users/fresh/OneDrive/Documents/NetBeansProjects/MeowClinic/src/Pages/Page1.java</file>
+            <file>file:/C:/Users/fresh/OneDrive/Documents/NetBeansProjects/MeowClinic/src/Popup/AddQueue.java</file>
         </group>
     </open-files>
 </project-private>
