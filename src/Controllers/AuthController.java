@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author pongp
  */
-public class AuthController extends Router {
+public class AuthController extends Router implements Controller {
 
     private LayoutController layController;
     private AuthLayout authLayout;
@@ -28,6 +28,7 @@ public class AuthController extends Router {
         changeRoute("signinform");
     }
 
+    @Override
     public AuthLayout getLayout() {
         return this.authLayout;
     }
