@@ -16,24 +16,30 @@ public class MainController extends Router {
 
     private MainLayout mainLayout;
 
-    private JPanel page1, Cashier;
+    private JPanel Queue, Records, Cashier, Setting;
 
     public MainController(LayoutController layController) {
         mainLayout = new MainLayout(layController, this);
 
-        page1 = new Page1();
+        Queue = new Queue();
+        Records = new Records();
         Cashier = new Cashier();
+        Setting = new Setting();
 
-        changeRoute("page1");
+        changeRoute("queue");
     }
 
     @Override
     public void changeRoute(String name) {
         name = name.toLowerCase();
-        if (name.equals(getClassName(page1))) {
-            replacePanel(mainLayout.getPanel(), page1);
+        if (name.equals(getClassName(Queue))) {
+            replacePanel(mainLayout.getPanel(), Queue);
+        } else if (name.equals(getClassName(Records))) {
+            replacePanel(mainLayout.getPanel(), Records);
         } else if (name.equals(getClassName(Cashier))) {
             replacePanel(mainLayout.getPanel(), Cashier);
+        } else if (name.equals(getClassName(Setting))) {
+            replacePanel(mainLayout.getPanel(), Setting);
         }
     }
 

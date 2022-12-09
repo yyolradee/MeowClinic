@@ -8,12 +8,12 @@ package Pages;
  *
  * @author pongp
  */
-public class Page1 extends javax.swing.JPanel {
+public class Queue extends javax.swing.JPanel {
 
     /**
      * Creates new form Page1
      */
-    public Page1() {
+    public Queue() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class Page1 extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 656));
 
-        jLabel1.setText("Page 1");
+        jLabel1.setText("Queue");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
