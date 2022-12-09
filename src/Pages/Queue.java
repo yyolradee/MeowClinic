@@ -103,6 +103,8 @@ public class Queue extends javax.swing.JPanel {
         jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
         jTable1.setShowGrid(true);
         jTable1.getTableHeader().setDefaultRenderer(new Renderer.MeowTableHeaderRenderer());
+        jTable1.getTableHeader().setBackground(new java.awt.Color(108, 118, 234));
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

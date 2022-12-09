@@ -169,9 +169,9 @@
             <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="showGrid" type="boolean" value="true" postCode="jTable1.getTableHeader().setDefaultRenderer(new Renderer.MeowTableHeaderRenderer());"/>
+            <Property name="showGrid" type="boolean" value="true" postCode="jTable1.getTableHeader().setDefaultRenderer(new Renderer.MeowTableHeaderRenderer());&#xa;jTable1.getTableHeader().setBackground(new java.awt.Color(108, 118, 234));"/>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
             </Property>
           </Properties>
         </Component>
