@@ -36,16 +36,21 @@ public class Queue extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1280, 656));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel1.setText("คิว");
+        jLabel1.setText("Queue");
 
         jTextField1.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField1.setText("ค้นหา");
+        jTextField1.setText("Search");
         jTextField1.setToolTipText("");
         jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(108, 118, 234));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("เพื่มคิว");
+        jButton1.setText("Add Queue");
         jButton1.setBorder(null);
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(108, 118, 234), 2));
@@ -84,7 +89,7 @@ public class Queue extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "เวลานัด", "ชื่อลูกค้า", "ชื่อสัตว์เลี้ยง", "เบอร์โทร", "รายละเอียดสัตว์", "ยอมรับ", "ยกเลิก"
+                "Appointment Time", "Customer Name", "Pet Name", "Tel", "Pet Details", "Accept", "Cancel"
             }
         ) {
             Class[] types = new Class [] {
@@ -130,6 +135,10 @@ public class Queue extends javax.swing.JPanel {
                 .addGap(26, 26, 26))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
