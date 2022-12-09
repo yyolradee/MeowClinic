@@ -16,13 +16,13 @@ public class MainController extends Router {
 
     private MainLayout mainLayout;
 
-    private JPanel page1, page2;
+    private JPanel page1, Cashier;
 
     public MainController(LayoutController layController) {
         mainLayout = new MainLayout(layController, this);
 
         page1 = new Page1();
-        page2 = new Page2();
+        Cashier = new Cashier();
 
         changeRoute("page1");
     }
@@ -32,8 +32,8 @@ public class MainController extends Router {
         name = name.toLowerCase();
         if (name.equals(getClassName(page1))) {
             replacePanel(mainLayout.getPanel(), page1);
-        } else if (name.equals(getClassName(page2))) {
-            replacePanel(mainLayout.getPanel(), page2);
+        } else if (name.equals(getClassName(Cashier))) {
+            replacePanel(mainLayout.getPanel(), Cashier);
         }
     }
 
