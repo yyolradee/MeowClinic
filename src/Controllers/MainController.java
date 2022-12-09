@@ -6,25 +6,28 @@ package Controllers;
 
 import Layouts.MainLayout;
 import Pages.*;
-import javax.swing.JPanel;
+import Controllers.PageController.*;
 
 /**
  *
  * @author pongp
  */
-public class MainController extends Router {
+public class MainController extends Router implements Controller {
 
     private MainLayout mainLayout;
 
-    private JPanel Queue, Records, Cashier, Setting;
+    private QueueController Queue;
+    private RecordsController Records;
+    private CashierController Cashier;
+    private SettingController Setting;
 
     public MainController(LayoutController layController) {
         mainLayout = new MainLayout(layController, this);
 
-        Queue = new Queue();
-        Records = new Records();
-        Cashier = new Cashier();
-        Setting = new Setting();
+        Queue = new QueueController();
+        Records = new RecordsController();
+        Cashier = new CashierController();
+        Setting = new SettingController();
 
         changeRoute("queue");
     }
@@ -32,17 +35,18 @@ public class MainController extends Router {
     @Override
     public void changeRoute(String name) {
         name = name.toLowerCase();
-        if (name.equals(getClassName(Queue))) {
-            replacePanel(mainLayout.getPanel(), Queue);
-        } else if (name.equals(getClassName(Records))) {
-            replacePanel(mainLayout.getPanel(), Records);
-        } else if (name.equals(getClassName(Cashier))) {
-            replacePanel(mainLayout.getPanel(), Cashier);
-        } else if (name.equals(getClassName(Setting))) {
-            replacePanel(mainLayout.getPanel(), Setting);
+        if (name.equals(getClassName(Queue.getLayout()))) {
+            replacePanel(mainLayout.getPanel(), Queue.getLayout());
+        } else if (name.equals(getClassName(Records.getLayout()))) {
+            replacePanel(mainLayout.getPanel(), Records.getLayout());
+        } else if (name.equals(getClassName(Cashier.getLayout()))) {
+            replacePanel(mainLayout.getPanel(), Cashier.getLayout());
+        } else if (name.equals(getClassName(Setting.getLayout()))) {
+            replacePanel(mainLayout.getPanel(), Setting.getLayout());
         }
     }
 
+    @Override
     public MainLayout getLayout() {
         return this.mainLayout;
     }

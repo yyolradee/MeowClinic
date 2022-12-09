@@ -8,12 +8,13 @@ import Model.Database;
 import View.MainView;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JPanel;
 
 /**
  *
  * @author pongp
  */
-public class LayoutController extends Router implements WindowListener {
+public class LayoutController extends Router implements WindowListener, Controller {
 
     private MainView mainView;
 
@@ -24,7 +25,7 @@ public class LayoutController extends Router implements WindowListener {
 
     public LayoutController() {
         database = new Database();
-        
+
         mainView = new MainView();
         mainView.getFrame().addWindowListener(this);
 
@@ -78,5 +79,10 @@ public class LayoutController extends Router implements WindowListener {
     @Override
     public void windowDeactivated(WindowEvent e) {
 
+    }
+
+    @Override
+    public JPanel getLayout() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
