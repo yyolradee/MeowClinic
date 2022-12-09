@@ -8,12 +8,12 @@ package Pages;
  *
  * @author pongp
  */
-public class Page2 extends javax.swing.JPanel {
+public class Records extends javax.swing.JPanel {
 
     /**
      * Creates new form Page1
      */
-    public Page2() {
+    public Records() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class Page2 extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 656));
 
-        jLabel1.setText("Page 2");
+        jLabel1.setText("Record");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -40,7 +40,7 @@ public class Page2 extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(621, 621, 621)
                 .addComponent(jLabel1)
-                .addContainerGap(624, Short.MAX_VALUE))
+                .addContainerGap(622, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
