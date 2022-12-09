@@ -39,7 +39,7 @@ public class AddPet extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(217, 217, 217));
         jTextField1.setText("PetName");
-        jTextField1.setBorder(null);
+        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         jComboBox1.setBackground(new java.awt.Color(217, 217, 217));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

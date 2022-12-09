@@ -45,6 +45,7 @@ public class SettingButtonPane extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(980, 420));
 
         jButton1.setBackground(new java.awt.Color(217, 217, 217));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("DISNAME");
         jButton1.setBorder(null);
@@ -55,6 +56,7 @@ public class SettingButtonPane extends javax.swing.JPanel {
         });
 
         jButton2.setBackground(new java.awt.Color(237, 234, 240));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setText("Account");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
