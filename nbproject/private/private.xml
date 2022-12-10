@@ -3,41 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
+            <file>file:/F:/MeowClinic/src/Images/icon.png</file>
             <file>file:/F:/MeowClinic/src/View/MainView.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/PageController/RecordsController.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/AuthController.java</file>
+            <file>file:/F:/MeowClinic/src/Layouts/AuthLayout.java</file>
+            <file>file:/F:/MeowClinic/src/Model/UserModel.java</file>
+            <file>file:/F:/MeowClinic/src/Layouts/MainLayout.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/PageController/QueueController.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/LayoutController.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/Controller.java</file>
+            <file>file:/F:/MeowClinic/src/Pages/Setting.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/PageController/SettingController.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/PageController/CashierController.java</file>
             <file>file:/F:/MeowClinic/src/Popup/AddQueue.java</file>
-            <file>file:/F:/MeowClinic/src/Pages/Page1.java</file>
+            <file>file:/F:/MeowClinic/src/Model/Database.java</file>
+            <file>file:/F:/MeowClinic/src/GeneralClass/User.java</file>
+            <file>file:/F:/MeowClinic/src/Pages/Queue.java</file>
+            <file>file:/F:/MeowClinic/src/Pages/Records.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/MainController.java</file>
+            <file>file:/F:/MeowClinic/src/Controllers/Router.java</file>
             <file>file:/F:/MeowClinic/src/Pages/Cashier.java</file>
-            <file>file:/F:/MeowClinic/src/Main.java</file>
-            <file>file:/F:/MeowClinic/src/Pages/Page2.java</file>
-=======
-            <file>file:/C:/Users/fresh/OneDrive/Documents/NetBeansProjects/MeowClinic/src/Main.java</file>
-            <file>file:/C:/Users/fresh/OneDrive/Documents/NetBeansProjects/MeowClinic/src/Auth/SignInForm.java</file>
-            <file>file:/C:/Users/fresh/OneDrive/Documents/NetBeansProjects/MeowClinic/src/Popup/AddQueue.java</file>
->>>>>>> 9a01611705ff3f6fdc7c56a34808ad4723f84c98
-=======
-            <file>file:/D:/Projects/MeowClinic/src/Auth/SignInForm.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Images/logowhite.png</file>
-            <file>file:/D:/Projects/MeowClinic/src/Pages/Queue.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Main.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/GeneralClass/User.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Layouts/AuthLayout.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Auth/SignUpForm.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Model/Database.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controllers/Router.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/View/MainView.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controllers/MainController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Model/UserModel.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Pages/Cashier.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Layouts/MainLayout.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controllers/AuthController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Pages/Records.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Pages/Setting.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controllers/PageController/CashierController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controllers/LayoutController.java</file>
-            <file>file:/D:/Projects/MeowClinic/src/Controllers/Controller.java</file>
->>>>>>> a208cf769b4f608064cffccb6b383a4b6e38d340
         </group>
     </open-files>
 </project-private>
