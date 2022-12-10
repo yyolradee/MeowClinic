@@ -28,7 +28,7 @@ public class SettingModel {
         }
     }
     
-    // Deleting Account
+    // Deleting Account through ID
     public void deleteAccount(String username){
         try {
             String sql = "DELETE FROM users WHERE username = ?;";
