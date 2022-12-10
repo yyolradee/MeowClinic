@@ -4,7 +4,11 @@
  */
 package Model;
 
+import Controllers.LayoutController;
+import GeneralClass.User;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,11 +27,64 @@ public class UserModel {
                 System.out.println(rec.getString("emp_salary"));
             }
         } catch (SQLException ex) {
-            System.out.println("err");
+            System.out.println("err getUser");
         }
     }
-    
-//    public void addUser() {
-//        String sql = "INSERT INTO users"
-//    }
+
+    public void addUser(String username, String displayName, String password) {
+        try {
+            String sql = "INSERT INTO users (username,displayName,password) values (?, ?, ?)";
+            PreparedStatement pre = Database.getConnection().prepareStatement(sql);
+            pre.setString(1, username.toLowerCase());
+            pre.setString(2, displayName);
+            pre.setString(3, password);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("err addUser");
+        }
+    }
+
+    public boolean checkExistUsername(String username) {
+        try {
+            String sql = "SELECT username FROM users WHERE username = ?";
+            PreparedStatement pre = Database.getConnection().prepareStatement(sql);
+            pre.setString(1, username.toLowerCase());
+            ResultSet rec = pre.executeQuery();
+            if ((rec != null) && (rec.next())) {
+                return rec.getString("username").equals(username.toLowerCase());
+            }
+        } catch (SQLException ex) {
+            System.out.println("err checkExistUsername");
+        }
+        return false;
+    }
+
+    public User checkUsernameAndPassword(String username, String password) {
+        try {
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            PreparedStatement pre = Database.getConnection().prepareStatement(sql);
+            pre.setString(1, username.toLowerCase());
+            pre.setString(2, password);
+            ResultSet rec = pre.executeQuery();
+            if ((rec != null) && (rec.next())) {
+                return new User(rec.getString("displayName"), rec.getString("username"), rec.getString("password"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("err checkUsernameAndPassword");
+        }
+        return null;
+    }
+
+    public ResultSet getUserByName(String username) {
+        ResultSet rec = null;
+        try {
+            String sql = "SELECT * FROM users WHERE username = ?";
+            PreparedStatement pre = Database.getConnection().prepareStatement(sql);
+            pre.setString(1, username.toLowerCase());
+            rec = pre.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println("err getUserByName");
+        }
+        return rec;
+    }
 }

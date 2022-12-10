@@ -39,7 +39,7 @@ public class MainLayout extends javax.swing.JPanel {
         ScaleImg("/Images/gear-solid.png", jButton3, 512 / 25, 512 / 25);
         ScaleImg("/Images/right-from-bracket-solid.png", jButton4, 512 / 25, 512 / 25);
         ScaleImg("/Images/user-solid.png", jLabel2, 448 / 25, 512 / 25);
-
+        this.jLabel2.setText(LayoutController.getUser().getDisplayName());
     }
 
     public void ScaleImg(String path, JLabel item, int width, int height) {
@@ -245,6 +245,8 @@ public class MainLayout extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         this.layout.changeRoute("authlayout");
+//        Clear user data
+        LayoutController.setUser(null);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

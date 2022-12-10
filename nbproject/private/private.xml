@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/F:/MeowClinic/src/Images/icon.png</file>
             <file>file:/F:/MeowClinic/src/View/MainView.java</file>
             <file>file:/F:/MeowClinic/src/Controllers/PageController/RecordsController.java</file>
@@ -24,6 +25,9 @@
             <file>file:/F:/MeowClinic/src/Controllers/MainController.java</file>
             <file>file:/F:/MeowClinic/src/Controllers/Router.java</file>
             <file>file:/F:/MeowClinic/src/Pages/Cashier.java</file>
+=======
+            <file>file:/D:/Projects/MeowClinic/src/Main.java</file>
+>>>>>>> 5bdc28f37e01a90c4cd203300b34cf6c33628e10
         </group>
     </open-files>
 </project-private>
