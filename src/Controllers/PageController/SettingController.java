@@ -21,7 +21,7 @@ public class SettingController extends Router implements Controller {
     private SettingPageName settingPageName;
 
     public SettingController() {
-        setting = new Setting();
+        setting = new Setting(this);
         settingPageAccount = new SettingPageAccount();
         settingPageName = new SettingPageName();
 
