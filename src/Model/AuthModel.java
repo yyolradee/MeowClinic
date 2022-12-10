@@ -4,17 +4,14 @@
  */
 package Model;
 
-import Controllers.LayoutController;
 import GeneralClass.User;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author pongp
  */
-public class UserModel {
+public class AuthModel {
 
     public void getUser() {
         String sql = "select * from tbl_employee";
@@ -28,6 +25,7 @@ public class UserModel {
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
+            ex.printStackTrace();
         }
     }
 
@@ -41,6 +39,7 @@ public class UserModel {
             pre.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("err addUser");
+            ex.printStackTrace();
         }
     }
 
@@ -55,6 +54,7 @@ public class UserModel {
             }
         } catch (SQLException ex) {
             System.out.println("err checkExistUsername");
+            ex.printStackTrace();
         }
         return false;
     }
@@ -71,6 +71,7 @@ public class UserModel {
             }
         } catch (SQLException ex) {
             System.out.println("err checkUsernameAndPassword");
+            ex.printStackTrace();
         }
         return null;
     }
@@ -84,6 +85,7 @@ public class UserModel {
             rec = pre.executeQuery();
         } catch (SQLException ex) {
             System.out.println("err getUserByName");
+            ex.printStackTrace();
         }
         return rec;
     }

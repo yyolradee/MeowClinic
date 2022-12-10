@@ -7,7 +7,8 @@ package Controllers;
 import Auth.*;
 import GeneralClass.User;
 import Layouts.AuthLayout;
-import Model.UserModel;
+import Model.AuthModel;
+import java.util.regex.Pattern;
 import javax.swing.JPanel;
 
 /**
@@ -21,7 +22,7 @@ public class AuthController extends Router implements Controller {
     private SignUpForm signup;
     private SignInForm signin;
 
-    private UserModel user;
+    private AuthModel auth;
 
     public AuthController(LayoutController layController) {
         this.layController = layController;
@@ -30,7 +31,7 @@ public class AuthController extends Router implements Controller {
         signup = new SignUpForm(this);
         signin = new SignInForm(this);
 
-        user = new UserModel();
+        auth = new AuthModel();
 
         changeRoute("signinform");
     }
@@ -42,7 +43,7 @@ public class AuthController extends Router implements Controller {
 
     public void SignUp(String username, String password) {
         signin.setError("");
-        User userLogin = user.checkUsernameAndPassword(username, password);
+        User userLogin = auth.checkUsernameAndPassword(username, password);
         LayoutController.setUser(userLogin);
         if (userLogin != null) {
             this.signin.clearForm();
@@ -56,14 +57,18 @@ public class AuthController extends Router implements Controller {
         signup.setError("");
         if (displayName.equals("") || username.equals("") || password.equals("") || confirmPassword.equals("")) {
             signup.setError("Error: please fill out the form");
-        } else if (user.checkExistUsername(username)) {
+        } else if (username.length() < 6) {
+            signup.setError("Error: username must be at least 6 letter");
+        } else if (!Pattern.matches("^[A-Za-z0-9_.]+$", username)) {
+            signup.setError("Error: username format is incorrect (a-z, 0-9, _, .)");
+        } else if (auth.checkExistUsername(username)) {
             signup.setError("Error: username already taken");
         } else if (password.length() < 6) {
             signup.setError("Error: password must be at least 6 letter");
         } else if (!password.equals(confirmPassword)) {
             signup.setError("Error: password not match");
         } else {
-            user.addUser(username, displayName, password);
+            auth.addUser(username, displayName, password);
             this.signup.clearForm();
             changeRoute("signinform");
         }
