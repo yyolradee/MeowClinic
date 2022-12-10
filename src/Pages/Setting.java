@@ -4,18 +4,24 @@
  */
 package Pages;
 
+import Controllers.PageController.SettingController;
 import javax.swing.JPanel;
 
 /**
  *
  * @author pongp
  */
-public class Setting extends javax.swing.JPanel {
-
+public class Setting extends javax.swing.JPanel{
+    private SettingController sc;
     /**
      * Creates new form Page1
      */
     public Setting() {
+        initComponents();
+    }
+
+    public Setting(SettingController aThis) {
+        this.sc = aThis;
         initComponents();
     }
     
@@ -60,6 +66,11 @@ public class Setting extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton2.setText("Account");
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(217, 217, 217));
         jPanel2.setLayout(new java.awt.BorderLayout());
@@ -94,7 +105,7 @@ public class Setting extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(980, Short.MAX_VALUE))
+                .addContainerGap(977, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,9 +119,12 @@ public class Setting extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        sc.changeRoute("SettingPageName");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        sc.changeRoute("SettingPageAccount");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
