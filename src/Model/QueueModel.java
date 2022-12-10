@@ -27,7 +27,7 @@ public class QueueModel {
                 Pet pet = new Pet(rec.getInt("pets.id"), rec.getInt("pets.customer_id"), rec.getString("pets.name"), rec.getDouble("pets.weight"), rec.getString("pets.color"), rec.getString("pets.type"), rec.getString("pets.species"));
                 Customer cus = new Customer(rec.getInt("customers.id"), rec.getString("customers.firstName"), rec.getString("customers.lastName"), rec.getString("customers.phone"));
                 User user = new User(rec.getString("users.displayName"), rec.getString("users.username"));
-                queue.add(new Queue(rec.getInt("queues.id"), cus, pet, user));
+                queue.add(new Queue(rec.getInt("queues.id"), rec.getString("queues.time"), cus, pet, user));
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
@@ -45,7 +45,7 @@ public class QueueModel {
                 Pet pet = new Pet(rec.getInt("pets.id"), rec.getInt("pets.customer_id"), rec.getString("pets.name"), rec.getDouble("pets.weight"), rec.getString("pets.color"), rec.getString("pets.type"), rec.getString("pets.species"));
                 Customer cus = new Customer(rec.getInt("customers.id"), rec.getString("customers.firstName"), rec.getString("customers.lastName"), rec.getString("customers.phone"));
                 User user = new User(rec.getString("users.displayName"), rec.getString("users.username"));
-                return new Queue(rec.getInt("queues.id"), cus, pet, user);
+                return new Queue(rec.getInt("queues.id"), rec.getString("queues.time"), cus, pet, user);
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
