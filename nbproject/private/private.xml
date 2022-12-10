@@ -3,31 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/MeowClinic/src/Images/icon.png</file>
-            <file>file:/F:/MeowClinic/src/Layouts/AuthLayout.java</file>
-            <file>file:/F:/MeowClinic/src/Layouts/MainLayout.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/Controller.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/PageController/CashierController.java</file>
-            <file>file:/F:/MeowClinic/src/Popup/AddQueue.java</file>
-            <file>file:/F:/MeowClinic/src/Model/Database.java</file>
-            <file>file:/F:/MeowClinic/src/Layouts/SettingButtonPane.java</file>
-            <file>file:/F:/MeowClinic/src/GeneralClass/User.java</file>
-            <file>file:/F:/MeowClinic/src/Pages/Queue.java</file>
-            <file>file:/F:/MeowClinic/src/Pages/Records.java</file>
-            <file>file:/F:/MeowClinic/src/Layouts/SettingPageAccount.java</file>
-            <file>file:/F:/MeowClinic/src/View/MainView.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/PageController/RecordsController.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/AuthController.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/PageController/QueueController.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/LayoutController.java</file>
-            <file>file:/F:/MeowClinic/src/Images/user-solid.png</file>
-            <file>file:/F:/MeowClinic/src/Pages/Setting.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/PageController/SettingController.java</file>
-            <file>file:/F:/MeowClinic/src/Images/user-solid.svg</file>
-            <file>file:/F:/MeowClinic/src/Layouts/SettingPageName.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/MainController.java</file>
-            <file>file:/F:/MeowClinic/src/Controllers/Router.java</file>
-            <file>file:/F:/MeowClinic/src/Pages/Cashier.java</file>
             <file>file:/F:/MeowClinic/src/Main.java</file>
         </group>
     </open-files>
