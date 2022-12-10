@@ -103,10 +103,6 @@ public class Records extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new Renderer.ButtonRenderer("Delete"));
         }
-        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) jTable1.getModel();
-        for(int i = 0; i < 50; i++){
-            model.addRow(new Object[]{i, String.format("Row %d", i), String.format("Row %d", i), String.format("Row %d", i)});
-        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -150,7 +146,14 @@ public class Records extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public void setRecordTable(java.util.LinkedList<GeneralClass.Customer> customers){
+        for(int i = 0; i < customers.size(); i++){
+            javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+            model.addRow(new Object[]{i+1, customers.get(i).getFirstName() + customers.get(i).getLastName(), customers.get(i).getPhone(), customers.get(i).getPets().size()});
+        }
+    }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

@@ -5,6 +5,7 @@
 package Controllers.PageController;
 
 import Controllers.Controller;
+import Model.RecordModel;
 import Pages.Records;
 
 /**
@@ -14,9 +15,12 @@ import Pages.Records;
 public class RecordsController implements Controller {
 
     private Records record;
+    private RecordModel model;
 
     public RecordsController() {
         record = new Records();
+        model = new RecordModel();
+        record.setRecordTable(model.getCustomers());
     }
 
     @Override
