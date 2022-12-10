@@ -131,6 +131,7 @@ public class Queue extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setGridColor(new java.awt.Color(204, 204, 204));
         jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
         jTable1.setShowGrid(true);
         jTable1.getTableHeader().setDefaultRenderer(new Renderer.MeowTableHeaderRenderer());
