@@ -5,6 +5,7 @@
 package Controllers.PageController;
 
 import Controllers.Controller;
+import Model.QueueModel;
 import Pages.Queue;
 
 /**
@@ -14,9 +15,12 @@ import Pages.Queue;
 public class QueueController implements Controller {
 
     private Queue queue;
+    private QueueModel model;
 
     public QueueController() {
         queue = new Queue();
+        model = new QueueModel();
+        queue.setQueueTable(model.getQueues());
     }
 
     @Override

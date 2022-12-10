@@ -97,16 +97,14 @@ public class Queue extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
+            jTable1.getColumnModel().getColumn(4).setCellRenderer(new Renderer.ButtonRenderer("View"));
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new Renderer.ButtonRenderer("Accept"));
             jTable1.getColumnModel().getColumn(6).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
             jTable1.getColumnModel().getColumn(6).setCellRenderer(new Renderer.ButtonRenderer("Cancel"));
-        }
-        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) jTable1.getModel();
-        for(int i = 0; i < 50; i++){
-            model.addRow(new Object[]{i, String.format("Row %d", i), String.format("Row %d", i), String.format("Row %d", i), String.format("Row %d", i)});
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -151,6 +149,12 @@ public class Queue extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public void setQueueTable(java.util.LinkedList<GeneralClass.Queue> queue){
+        for(int i = 0; i < queue.size(); i++){
+            javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+            model.addRow(new Object[]{queue.get(i).getTime(), queue.get(i).getCustomer().getFirstName() + queue.get(i).getCustomer().getLastName(), queue.get(i).getPet().getName(), queue.get(i).getCustomer().getPhone()});
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
