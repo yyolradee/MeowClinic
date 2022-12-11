@@ -67,7 +67,7 @@ public class AuthModel {
             pre.setString(2, password);
             ResultSet rec = pre.executeQuery();
             if ((rec != null) && (rec.next())) {
-                return new User(rec.getString("displayName"), rec.getString("username"), rec.getString("password"));
+                return new User(rec.getInt("id"), rec.getString("displayName"), rec.getString("username"), rec.getString("password"));
             }
         } catch (SQLException ex) {
             System.out.println("err checkUsernameAndPassword");
