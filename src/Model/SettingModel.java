@@ -15,12 +15,12 @@ import java.util.*;
 public class SettingModel {
     
     // Changing password by receiving new password input 
-    public void changePassword(String username, String password){
+    public void changePassword(int id, String password){
         try {
-            String sql = "UPDATE users SET password = ? WHERE username = ?;";
+            String sql = "UPDATE users SET password = ? WHERE id = ?;";
             PreparedStatement pre = Database.getConnection().prepareStatement(sql);
             pre.setString(1, password);
-            pre.setString(2, username);
+            pre.setInt(2, id);
             pre.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("err changePassword");
@@ -28,12 +28,12 @@ public class SettingModel {
         }
     }
     
-    // Deleting Account
-    public void deleteAccount(String username){
+    // Deleting Account through ID
+    public void deleteAccount(int id){
         try {
-            String sql = "DELETE FROM users WHERE username = ?;";
+            String sql = "DELETE FROM users WHERE id = ?;";
             PreparedStatement pre = Database.getConnection().prepareStatement(sql);
-            pre.setString(1, username);
+            pre.setInt(1, id);
             pre.executeUpdate();
         } catch (SQLException ex){
             System.out.println("err delAccount");
@@ -50,30 +50,12 @@ public class SettingModel {
         try {
             rec = Database.getStatement().executeQuery(sql);
             while ((rec != null) && (rec.next())) {
-                customers.add(new Customer(rec.getInt("id"), rec.getString("firstName"), rec.getString("lastName"), rec.getString("phone"), getPets(rec.getInt("id"))));
+                customers.add(new Customer(rec.getInt("id"), rec.getString("firstName"), rec.getString("lastName"), rec.getString("phone")));
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
             ex.printStackTrace();
         }
         return customers;
-    }
-        
-    public LinkedList<Pet> getPets(int id) {
-        // get all pets of customer (use id to find)
-        LinkedList<Pet> pets = new LinkedList<Pet>();
-        try {
-            String sql = "SELECT * FROM pets WHERE customer_id = ?";
-            PreparedStatement pre = Database.getConnection().prepareStatement(sql);
-            pre.setInt(1, id);
-            ResultSet rec = pre.executeQuery();
-            while ((rec != null) && (rec.next())) {
-                pets.add(new Pet(rec.getInt("id"), rec.getInt("customer_id"), rec.getString("name"), rec.getDouble("weight"), rec.getString("color"), rec.getString("type"), rec.getString("species")));
-            }
-        } catch (SQLException ex) {
-            System.out.println("err getUser");
-            ex.printStackTrace();
-        }
-        return pets;
     }
 }
