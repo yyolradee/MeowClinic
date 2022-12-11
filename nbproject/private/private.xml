@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/fresh/Desktop/Coding/OOP/MeowClinic/src/Popup/AddQueue.java</file>
             <file>file:/C:/Users/fresh/Desktop/Coding/OOP/MeowClinic/src/GeneralClass/User.java</file>
             <file>file:/C:/Users/fresh/Desktop/Coding/OOP/MeowClinic/src/Popup/ChangePassword.java</file>
@@ -12,6 +13,15 @@
             <file>file:/C:/Users/fresh/Desktop/Coding/OOP/MeowClinic/src/Main.java</file>
             <file>file:/C:/Users/fresh/Desktop/Coding/OOP/MeowClinic/src/Controllers/LayoutController.java</file>
             <file>file:/C:/Users/fresh/Desktop/Coding/OOP/MeowClinic/src/Pages/Setting.java</file>
+=======
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/GeneralClass/User.java</file>
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/Controllers/LayoutController.java</file>
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/Main.java</file>
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/Pages/Cashier.java</file>
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/Model/Database.java</file>
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/Controllers/PageController/SettingController.java</file>
+            <file>file:/C:/Users/supakit/Documents/NetBeansProjects/MeowClinic/src/Model/SettingModel.java</file>
+>>>>>>> ecd2f0bcc6c95efd3b0d7682fccd24b1414c84f5
         </group>
     </open-files>
 </project-private>
