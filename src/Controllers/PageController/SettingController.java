@@ -66,9 +66,10 @@ public class SettingController extends Router implements Controller {
     }
     
     public void changeDisplayName(){
-        //model update display name wait for nongzheng.
-        JOptionPane.showMessageDialog(null, "Displayname changed.", "", JOptionPane.PLAIN_MESSAGE);
+        settingModel.updateDisplayName(LayoutController.getUser().getID(), settingPageName.getDisplaynamef().getText());
+        LayoutController.getUser().setDisplayName(settingPageName.getDisplaynamef().getText());
         settingPageName.getDisplaynamef().setText(LayoutController.getUser().getDisplayName());
+        JOptionPane.showMessageDialog(null, "Displayname changed.", "", JOptionPane.PLAIN_MESSAGE);
     }
 
     @Override
