@@ -32,13 +32,13 @@ public class MainLayout extends javax.swing.JPanel {
         this.layout = main;
         this.main = controller;
         initComponents();
-        ScaleImg("/Images/logowhite.png", jLabel1, 490 / 6, 221 / 6);
-        ScaleImg("/Images/people-group-solid.png", jButton1, 640 / 25, 512 / 25);
-        ScaleImg("/Images/clipboard-list-solid.png", jButton5, 384 / 25, 512 / 25);
-        ScaleImg("/Images/cash-register-solid.png", jButton2, 512 / 25, 512 / 25);
-        ScaleImg("/Images/gear-solid.png", jButton3, 512 / 25, 512 / 25);
-        ScaleImg("/Images/right-from-bracket-solid.png", jButton4, 512 / 25, 512 / 25);
-        ScaleImg("/Images/user-solid.png", jLabel2, 448 / 25, 512 / 25);
+        ScaleImg("/Images/logowhite.png", jLabel1, 490 / 7, 221 / 7);
+        ScaleImg("/Images/people-group-solid.png", jButton1, 640 / 27, 512 / 27);
+        ScaleImg("/Images/clipboard-list-solid.png", jButton5, 384 / 27, 512 / 27);
+        ScaleImg("/Images/cash-register-solid.png", jButton2, 512 / 27, 512 / 27);
+        ScaleImg("/Images/gear-solid.png", jButton3, 512 / 27, 512 / 27);
+        ScaleImg("/Images/right-from-bracket-solid.png", jButton4, 512 / 27, 512 / 27);
+//        ScaleImg("/Images/user-solid.png", jLabel2, 448 / 25, 512 / 25);
         this.jLabel2.setText(LayoutController.getUser().getDisplayName());
     }
 
@@ -84,6 +84,7 @@ public class MainLayout extends javax.swing.JPanel {
         jPanel5 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -97,7 +98,7 @@ public class MainLayout extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(780, 64));
 
         jButton1.setBackground(new java.awt.Color(108, 118, 234));
-        jButton1.setFont(new java.awt.Font("Lucida Sans", 1, 16)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Queue");
         jButton1.setBorder(null);
@@ -109,7 +110,7 @@ public class MainLayout extends javax.swing.JPanel {
         });
 
         jButton2.setBackground(new java.awt.Color(108, 118, 234));
-        jButton2.setFont(new java.awt.Font("Lucida Sans", 1, 16)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("POS");
         jButton2.setBorder(null);
@@ -121,7 +122,7 @@ public class MainLayout extends javax.swing.JPanel {
         });
 
         jButton3.setBackground(new java.awt.Color(108, 118, 234));
-        jButton3.setFont(new java.awt.Font("Lucida Sans", 1, 16)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Setting");
         jButton3.setBorder(null);
@@ -133,7 +134,7 @@ public class MainLayout extends javax.swing.JPanel {
         });
 
         jButton5.setBackground(new java.awt.Color(108, 118, 234));
-        jButton5.setFont(new java.awt.Font("Lucida Sans", 1, 16)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Record");
         jButton5.setBorder(null);
@@ -149,15 +150,15 @@ public class MainLayout extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(132, 132, 132)
                 .addComponent(jButton1)
-                .addGap(80, 80, 80)
+                .addGap(60, 60, 60)
                 .addComponent(jButton5)
-                .addGap(80, 80, 80)
+                .addGap(60, 60, 60)
                 .addComponent(jButton2)
-                .addGap(80, 80, 80)
+                .addGap(60, 60, 60)
                 .addComponent(jButton3)
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addContainerGap(785, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,11 +207,24 @@ public class MainLayout extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Nev Nebula");
         jLabel2.setToolTipText("");
+
+        jPanel6.setPreferredSize(new java.awt.Dimension(1, 0));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 32, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -218,9 +232,11 @@ public class MainLayout extends javax.swing.JPanel {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -228,9 +244,13 @@ public class MainLayout extends javax.swing.JPanel {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel5, java.awt.BorderLayout.EAST);
@@ -283,6 +303,7 @@ public class MainLayout extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 
 }
