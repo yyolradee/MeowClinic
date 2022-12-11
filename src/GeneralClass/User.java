@@ -4,6 +4,7 @@
  */
 package GeneralClass;
 
+import Layouts.MainLayout;
 import java.io.Serializable;
 
 /**
@@ -38,6 +39,7 @@ public class User implements Serializable {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+        MainLayout.setDisplayName(displayName);
     }
 
     public String getDisplayName() {

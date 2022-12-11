@@ -292,6 +292,10 @@
                 <Property name="text" type="java.lang.String" value="Nev Nebula"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
+              </AuxValues>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>

@@ -39,7 +39,7 @@ public class MainLayout extends javax.swing.JPanel {
         ScaleImg("/Images/gear-solid.png", jButton3, 512 / 27, 512 / 27);
         ScaleImg("/Images/right-from-bracket-solid.png", jButton4, 512 / 27, 512 / 27);
 //        ScaleImg("/Images/user-solid.png", jLabel2, 448 / 25, 512 / 25);
-        this.jLabel2.setText(LayoutController.getUser().getDisplayName());
+        setDisplayName(LayoutController.getUser().getDisplayName());
     }
 
     public void ScaleImg(String path, JLabel item, int width, int height) {
@@ -62,6 +62,10 @@ public class MainLayout extends javax.swing.JPanel {
 
     public JPanel getPanel() {
         return this.jPanel3;
+    }
+    
+    public static void setDisplayName(String text) {
+        MainLayout.jLabel2.setText(text);
     }
 
     /**
@@ -297,7 +301,7 @@ public class MainLayout extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private static javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
