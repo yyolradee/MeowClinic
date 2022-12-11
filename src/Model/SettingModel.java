@@ -5,7 +5,6 @@
 package Model;
 
 import GeneralClass.Customer;
-import GeneralClass.Pet;
 import java.sql.*;
 import java.util.*;
 /**
@@ -13,6 +12,21 @@ import java.util.*;
  * @author supakit
  */
 public class SettingModel {
+
+    // Updating displayName in Database
+    public void updateDisplayName(int id, String displayName){
+        try {
+            String sql = "UPDATE users SET displayName = ? WHERE id = ?;";
+            PreparedStatement pre = Database.getConnection().prepareStatement(sql);
+            pre.setString(1, displayName);
+            pre.setInt(2, id);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("err updateDisplayName");
+            ex.printStackTrace();
+        }
+    }
+        
     
     // Changing password by receiving new password input 
     public void changePassword(int id, String password){
