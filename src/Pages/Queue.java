@@ -107,6 +107,7 @@ public class Queue extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
             jTable1.getColumnModel().getColumn(6).setCellRenderer(new Renderer.ButtonRenderer("Cancel"));
         }
+        jTable1.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
