@@ -64,9 +64,11 @@ public class Cashier extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nebula", "Andromadra", "Messier", "AiKaze", "JarnPoom" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(108, 118, 234), 2));
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField1.setText("Services (type here)");
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(207, 207, 207)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -77,86 +79,99 @@ public class Cashier extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("ADD");
+        jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(108, 118, 234));
+        jButton2.setBackground(new java.awt.Color(158, 165, 241));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("8");
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(108, 118, 234));
+        jButton3.setBackground(new java.awt.Color(158, 165, 241));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("7");
+        jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(108, 118, 234));
+        jButton4.setBackground(new java.awt.Color(158, 165, 241));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("9");
+        jButton4.setBorderPainted(false);
 
-        jButton5.setBackground(new java.awt.Color(108, 118, 234));
+        jButton5.setBackground(new java.awt.Color(158, 165, 241));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("5");
+        jButton5.setBorderPainted(false);
 
-        jButton6.setBackground(new java.awt.Color(108, 118, 234));
+        jButton6.setBackground(new java.awt.Color(158, 165, 241));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("4");
+        jButton6.setBorderPainted(false);
 
-        jButton7.setBackground(new java.awt.Color(108, 118, 234));
+        jButton7.setBackground(new java.awt.Color(158, 165, 241));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("6");
+        jButton7.setBorderPainted(false);
 
-        jButton8.setBackground(new java.awt.Color(108, 118, 234));
+        jButton8.setBackground(new java.awt.Color(158, 165, 241));
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("2");
+        jButton8.setBorderPainted(false);
 
-        jButton9.setBackground(new java.awt.Color(108, 118, 234));
+        jButton9.setBackground(new java.awt.Color(158, 165, 241));
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("1");
+        jButton9.setBorderPainted(false);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(108, 118, 234));
+        jButton10.setBackground(new java.awt.Color(158, 165, 241));
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("3");
+        jButton10.setBorderPainted(false);
 
-        jButton11.setBackground(new java.awt.Color(108, 118, 234));
+        jButton11.setBackground(new java.awt.Color(158, 165, 241));
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("0");
+        jButton11.setBorderPainted(false);
 
         jButton12.setBackground(new java.awt.Color(108, 118, 234));
         jButton12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("C");
+        jButton12.setBorderPainted(false);
 
         jButton13.setBackground(new java.awt.Color(108, 118, 234));
         jButton13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("<-");
+        jButton13.setBorderPainted(false);
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(108, 118, 234), 2));
         jScrollPane1.setToolTipText("");
@@ -185,21 +200,27 @@ public class Cashier extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField2.setText("0");
+        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(207, 207, 207)));
 
         jButton21.setBackground(new java.awt.Color(204, 204, 204));
         jButton21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton21.setForeground(new java.awt.Color(255, 255, 255));
         jButton21.setText("+50");
+        jButton21.setBorderPainted(false);
 
         jButton22.setBackground(new java.awt.Color(204, 204, 204));
         jButton22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton22.setForeground(new java.awt.Color(255, 255, 255));
         jButton22.setText("+100");
+        jButton22.setBorderPainted(false);
 
         jButton23.setBackground(new java.awt.Color(204, 204, 204));
         jButton23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton23.setForeground(new java.awt.Color(255, 255, 255));
         jButton23.setText("+1000");
+        jButton23.setBorderPainted(false);
         jButton23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton23ActionPerformed(evt);
@@ -210,6 +231,7 @@ public class Cashier extends javax.swing.JPanel {
         jButton24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton24.setForeground(new java.awt.Color(255, 255, 255));
         jButton24.setText("+500");
+        jButton24.setBorderPainted(false);
 
         jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(108, 118, 234), 2));
 
