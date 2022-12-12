@@ -6,12 +6,14 @@ package Controllers.PageController;
 
 import Controllers.Controller;
 import Pages.Cashier;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author pongp
  */
-public class CashierController implements Controller {
+public class CashierController implements Controller, ActionListener {
 
     private Cashier cashier;
 
@@ -22,6 +24,11 @@ public class CashierController implements Controller {
     @Override
     public Cashier getLayout() {
         return this.cashier;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
     }
 
 }
