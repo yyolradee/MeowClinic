@@ -262,6 +262,7 @@ public class MainLayout extends javax.swing.JPanel {
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setPreferredSize(new java.awt.Dimension(1280, 656));
         jPanel3.setLayout(new java.awt.BorderLayout());
         add(jPanel3, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
