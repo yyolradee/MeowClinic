@@ -5,6 +5,7 @@
 package Model;
 
 import GeneralClass.Customer;
+import GeneralClass.User;
 import java.sql.*;
 import java.util.*;
 /**
@@ -55,9 +56,26 @@ public class SettingModel {
         }
     }
     
+    public LinkedList<User> getUsers() {
+        // get all User info
+        LinkedList<User> users = new LinkedList<User>();
+        String sql = "SELECT * FROM users";
+        ResultSet rec;
+        try {
+            rec = Database.getStatement().executeQuery(sql);
+            while ((rec != null) && (rec.next())) {
+                users.add(new User(rec.getInt("id"), rec.getString("username"), rec.getString("displayName"), rec.getString("password")));
+                System.out.println(rec.getInt("id") + " " + rec.getString("username") + " " + rec.getString("displayName") + " " + rec.getString("password"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("err getUser");
+            ex.printStackTrace();
+        }
+        return users;
+    }
     
     public LinkedList<Customer> getCustomers() {
-        // get all customer
+        // get all customer info
         LinkedList<Customer> customers = new LinkedList<Customer>();
         String sql = "SELECT * FROM customers";
         ResultSet rec;
@@ -67,7 +85,7 @@ public class SettingModel {
                 customers.add(new Customer(rec.getInt("id"), rec.getString("firstName"), rec.getString("lastName"), rec.getString("phone")));
             }
         } catch (SQLException ex) {
-            System.out.println("err getUser");
+            System.out.println("err getCustomer");
             ex.printStackTrace();
         }
         return customers;
