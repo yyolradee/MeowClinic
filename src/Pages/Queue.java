@@ -85,7 +85,7 @@ public class Queue extends javax.swing.JPanel {
         });
         jTable1.setGridColor(new java.awt.Color(204, 204, 204));
         jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(108, 118, 234));
+        jTable1.setSelectionBackground(new java.awt.Color(158, 165, 241));
         jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jTable1.setShowGrid(true);
         jTable1.getTableHeader().setDefaultRenderer(new Renderer.MeowTableHeaderRenderer());
