@@ -24,15 +24,17 @@ public class SettingController extends Router implements Controller {
     private SettingPageAccount settingPageAccount;
     private SettingPageName settingPageName;
     private ChangePassword cp;
+    private LayoutController lc;
     
     private SettingModel settingModel;
 
-    public SettingController() {
+    public SettingController(LayoutController lc) {
         setting = new Setting(this);
         settingPageAccount = new SettingPageAccount();
         settingPageName = new SettingPageName(this);
         settingModel = new SettingModel();
-
+        this.lc = lc;
+        
         changeRoute("SettingPageName");
     }
 
@@ -74,6 +76,8 @@ public class SettingController extends Router implements Controller {
     
     public void deleteAcc(){
         settingModel.deleteAccount(LayoutController.getUser().getID());
+        LayoutController.setUser(null);
+        lc.changeRoute("AuthLayout");
         JOptionPane.showMessageDialog(null, "Your account have been deleted.", "", JOptionPane.PLAIN_MESSAGE);
     }
 
