@@ -108,7 +108,7 @@ public class PetsTable extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox())
+            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.ButtonEditor()
             );
             jTable1.getColumnModel().getColumn(6).setCellRenderer(new Renderer.ButtonRenderer("Delete")
             );

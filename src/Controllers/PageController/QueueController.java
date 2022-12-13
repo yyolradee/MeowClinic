@@ -26,7 +26,7 @@ public class QueueController implements Controller {
     public void setQueueTable(java.util.LinkedList<GeneralClass.Queue> queue, javax.swing.JTable table){
         for(int i = 0; i < queue.size(); i++){
             javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) table.getModel();
-            model.addRow(new Object[]{queue.get(i).getTime(), queue.get(i).getCustomer().getFirstName() + queue.get(i).getCustomer().getLastName(), queue.get(i).getPet().getName(), queue.get(i).getCustomer().getPhone()});
+            model.addRow(new Object[]{queue.get(i).getTime(), queue.get(i).getCustomer().getFirstName() + " " + queue.get(i).getCustomer().getLastName(), queue.get(i).getPet().getName(), queue.get(i).getCustomer().getPhone(), queue.get(i), "Accept", "Cancel"});
         }
     }
 

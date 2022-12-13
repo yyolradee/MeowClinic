@@ -175,7 +175,7 @@
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                    <Connection code="new Editor.ButtonEditor(new javax.swing.JCheckBox())" type="code"/>
+                    <Connection code="new Editor.PetDetailEditor()" type="code"/>
                   </Editor>
                   <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                     <Connection code="new Renderer.ButtonRenderer(&quot;View&quot;)" type="code"/>
@@ -184,7 +184,7 @@
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                    <Connection code="new Editor.ButtonEditor(new javax.swing.JCheckBox())" type="code"/>
+                    <Connection code="new Editor.ButtonEditor()" type="code"/>
                   </Editor>
                   <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                     <Connection code="new Renderer.ButtonRenderer(&quot;Accept&quot;)" type="code"/>
@@ -193,7 +193,7 @@
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                    <Connection code="new Editor.ButtonEditor(new javax.swing.JCheckBox())" type="code"/>
+                    <Connection code="new Editor.ButtonEditor()" type="code"/>
                   </Editor>
                   <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                     <Connection code="new Renderer.ButtonRenderer(&quot;Cancel&quot;)" type="code"/>

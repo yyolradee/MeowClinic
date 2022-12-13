@@ -98,10 +98,10 @@ public class Records extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
+            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.ButtonEditor());
             jTable1.getColumnModel().getColumn(4).setCellRenderer(new Renderer.ButtonRenderer("View Pets"));
             jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor(new javax.swing.JCheckBox()));
+            jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor());
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new Renderer.ButtonRenderer("Delete"));
         }
 
