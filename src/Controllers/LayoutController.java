@@ -86,7 +86,7 @@ public class LayoutController extends Router implements WindowListener, Controll
         if (LayoutController.user != null) {
             mainController = new MainController(this);
         }
-
+        
         if (name.equals(getClassName(authController.getLayout()))) {
             replacePanel(mainView.getPanel(), authController.getLayout());
         } else if (mainController != null && name.equals(getClassName(mainController.getLayout()))) {

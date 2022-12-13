@@ -27,7 +27,7 @@ public class MainController extends Router implements Controller {
         Queue = new QueueController();
         Records = new RecordsController();
         Cashier = new CashierController();
-        Setting = new SettingController();
+        Setting = new SettingController(layController);
 
         changeRoute("queue");
     }
