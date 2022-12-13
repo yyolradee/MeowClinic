@@ -8,6 +8,7 @@ import Controllers.LayoutController;
 import Controllers.PageController.SettingController;
 import Popup.ChangePassword;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -47,7 +48,7 @@ public class SettingPageName extends javax.swing.JPanel {
         return passwordf;
     }
 
-    public void setPasswordf(JTextField passwordf) {
+    public void setPasswordf(JPasswordField passwordf) {
         this.passwordf = passwordf;
     }
 
@@ -72,12 +73,12 @@ public class SettingPageName extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         usernamef = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        passwordf = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         displaynamef = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        passwordf = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(217, 217, 217));
 
@@ -100,16 +101,6 @@ public class SettingPageName extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Display Name");
-
-        passwordf.setEditable(false);
-        passwordf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        passwordf.setText("*************");
-        passwordf.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
-        passwordf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordfActionPerformed(evt);
-            }
-        });
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -141,6 +132,11 @@ public class SettingPageName extends javax.swing.JPanel {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Delete Account");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(108, 118, 234));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -153,6 +149,15 @@ public class SettingPageName extends javax.swing.JPanel {
             }
         });
 
+        passwordf.setEditable(false);
+        passwordf.setBackground(new java.awt.Color(255, 255, 255));
+        passwordf.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
+        passwordf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordfActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,18 +166,18 @@ public class SettingPageName extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usernamef, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(usernamef, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel2))
-                            .addComponent(passwordf, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(displaynamef, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(displaynamef, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passwordf)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(jLabel1))
@@ -207,10 +212,6 @@ public class SettingPageName extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void passwordfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordfActionPerformed
-
     private void displaynamefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displaynamefActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_displaynamefActionPerformed
@@ -227,6 +228,14 @@ public class SettingPageName extends javax.swing.JPanel {
         sc.changeDisplayName();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        sc.deleteAcc();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void passwordfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordfActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField displaynamef;
@@ -236,7 +245,7 @@ public class SettingPageName extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField passwordf;
+    private javax.swing.JPasswordField passwordf;
     private javax.swing.JTextField usernamef;
     // End of variables declaration//GEN-END:variables
 }

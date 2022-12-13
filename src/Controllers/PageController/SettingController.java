@@ -71,6 +71,11 @@ public class SettingController extends Router implements Controller {
         settingPageName.getDisplaynamef().setText(LayoutController.getUser().getDisplayName());
         JOptionPane.showMessageDialog(null, "Displayname changed.", "", JOptionPane.PLAIN_MESSAGE);
     }
+    
+    public void deleteAcc(){
+        settingModel.deleteAccount(LayoutController.getUser().getID());
+        JOptionPane.showMessageDialog(null, "Your account have been deleted.", "", JOptionPane.PLAIN_MESSAGE);
+    }
 
     @Override
     public void changeRoute(String name) {
@@ -80,11 +85,6 @@ public class SettingController extends Router implements Controller {
         } else if (name.equals(getClassName(settingPageAccount))) {
             replacePanel(this.setting.getPanel(), settingPageAccount);
         }
-//        else if (name.equals(getClassName(Cashier.getLayout()))) {
-//            replacePanel(mainLayout.getPanel(), Cashier.getLayout());
-//        } else if (name.equals(getClassName(Setting.getLayout()))) {
-//            replacePanel(mainLayout.getPanel(), Setting.getLayout());
-//        }
     }
 
 }
