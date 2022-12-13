@@ -4,16 +4,20 @@
  */
 package Pages;
 
+import Controllers.PageController.QueueController;
+
 /**
  *
  * @author pongp
  */
 public class Queue extends javax.swing.JPanel {
 
+    private QueueController controller;
     /**
      * Creates new form Page1
      */
-    public Queue() {
+    public Queue(QueueController controller) {
+        this.controller = controller;
         initComponents();
     }
 
@@ -53,6 +57,11 @@ public class Queue extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Add Queue");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(108, 118, 234));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,8 +157,12 @@ public class Queue extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        controller.setQueueTable();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        controller.addQueue();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public javax.swing.JTable getJTable1(){
         return this.jTable1;

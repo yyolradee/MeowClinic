@@ -7,6 +7,8 @@ package Controllers.PageController;
 import Controllers.Controller;
 import Model.QueueModel;
 import Pages.Queue;
+import java.util.LinkedList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,16 +20,23 @@ public class QueueController implements Controller {
     private QueueModel model;
 
     public QueueController() {
-        queue = new Queue();
+        queue = new Queue(this);
         model = new QueueModel();
-        this.setQueueTable(model.getQueues(), queue.getJTable1());
+        setQueueTable();
     }
     
-    public void setQueueTable(java.util.LinkedList<GeneralClass.Queue> queue, javax.swing.JTable table){
-        for(int i = 0; i < queue.size(); i++){
-            javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) table.getModel();
-            model.addRow(new Object[]{queue.get(i).getTime(), queue.get(i).getCustomer().getFirstName() + " " + queue.get(i).getCustomer().getLastName(), queue.get(i).getPet().getName(), queue.get(i).getCustomer().getPhone(), queue.get(i), "Accept", "Cancel"});
+    public void setQueueTable(){
+        DefaultTableModel dtm = (DefaultTableModel) queue.getJTable1().getModel();
+        dtm.setRowCount(0);
+        LinkedList<GeneralClass.Queue> queueList = model.getQueues();
+        
+        for(int i = 0; i < queueList.size(); i++){
+            dtm.addRow(new Object[]{queueList.get(i).getTime(), queueList.get(i).getCustomer().getFirstName() + " " + queueList.get(i).getCustomer().getLastName(), queueList.get(i).getPet().getName(), queueList.get(i).getCustomer().getPhone(), queueList.get(i), "Accept", "Cancel"});
         }
+    }
+    
+    public void addQueue(){
+        
     }
 
     @Override

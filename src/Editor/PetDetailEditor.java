@@ -38,6 +38,7 @@ public class PetDetailEditor extends ButtonEditor implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(!isOpened){
+            isOpened = true;
             JFrame window = new PetDetail(queue);
             window.addWindowListener(new WindowAdapter(){
                 @Override
