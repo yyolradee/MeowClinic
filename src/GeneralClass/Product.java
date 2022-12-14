@@ -10,20 +10,22 @@ package GeneralClass;
  */
 public class Product {
 
+    private int id;
     private String name;
     private double price;
     private int quantity;
     private String description;
 
     public Product() {
-        this("", 0, "");
+        this(-1, "", 0, "");
     }
 
-    public Product(String name, float price) {
-        this(name, price, "");
+    public Product(String name, double price) {
+        this(-1, name, price, "");
     }
 
-    public Product(String name, float price, String description) {
+    public Product(int id, String name, double price, String description) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = 1;

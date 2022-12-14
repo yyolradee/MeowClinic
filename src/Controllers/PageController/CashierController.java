@@ -7,9 +7,11 @@ package Controllers.PageController;
 import Controllers.Controller;
 import GeneralClass.Cart;
 import GeneralClass.Product;
+import Model.CashierModel;
 import Pages.Cashier;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +24,7 @@ public class CashierController implements Controller, ActionListener {
 
     private Cashier cashier;
     private Cart cart;
+    ArrayList<Product> products;
 
     public CashierController() {
         this.cashier = new Cashier();
@@ -32,6 +35,12 @@ public class CashierController implements Controller, ActionListener {
         this.cashier.getPayment2().addActionListener(this);
         this.cashier.getPayment3().addActionListener(this);
         this.cashier.getPayment4().addActionListener(this);
+        this.cashier.getComboBox().addActionListener(this);
+
+        this.products = new CashierModel().getProducts();
+        for (int i = 0; i < this.products.size(); i++) {
+            this.cashier.getComboBox().addItem(this.products.get(i).getName());
+        }
 
         setQueueTable(this.cart.getProducts(), this.cashier.getTable());
     }
@@ -73,6 +82,21 @@ public class CashierController implements Controller, ActionListener {
                 JOptionPane.showMessageDialog(null, "No product in cart", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
+        } else if (e.getActionCommand().equals("comboBoxChanged")) {
+            if (this.cashier.getComboBox().getSelectedIndex() > 0) {
+                int index = this.cart.getProductIndexByName(this.products.get(this.cashier.getComboBox().getSelectedIndex() - 1).getName(), this.products.get(this.cashier.getComboBox().getSelectedIndex() - 1).getPrice());
+                DefaultTableModel model = (DefaultTableModel) this.cashier.getTable().getModel();
+                if (index != -1) {
+                    this.cart.getProducts().get(index).increaseQuantity();
+                    model.setValueAt(this.cart.getProducts().get(index).getQuantity(), index, 2);
+                } else {
+                    Product pd = new Product(this.products.get(this.cashier.getComboBox().getSelectedIndex() - 1).getName(), this.products.get(this.cashier.getComboBox().getSelectedIndex() - 1).getPrice());
+                    this.cart.addProduct(pd);
+                    model.addRow(new Object[]{this.cart.size(), pd.getName(), pd.getQuantity(), pd.getPrice()});
+                }
+                this.cashier.getComboBox().setSelectedIndex(0);
+                this.cashier.setTotal(this.cart.totalQuantity(), this.cart.totalPrice());
+            }
         }
     }
 
