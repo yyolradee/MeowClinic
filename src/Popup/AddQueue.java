@@ -4,18 +4,28 @@
  */
 package Popup;
 
+import Controllers.PageController.QueueController;
+import GeneralClass.Customer;
+import java.util.LinkedList;
+
 /**
  *
  * @author fresh
  */
 public class AddQueue extends javax.swing.JFrame {
 
+    private QueueController controller;
     /**
      * Creates new form AddQueue
      */
-    public AddQueue() {
+    public AddQueue(QueueController controller) {
+        this.controller = controller;
         initComponents();
         this.setVisible(true);
+        this.jComboBox1.removeAllItems();
+        this.jComboBox3.removeAllItems();
+        this.jComboBox4.removeAllItems();
+        controller.setAddQueueComboBox(jComboBox1, jComboBox4, jComboBox3);
     }
 
     /**
@@ -58,6 +68,7 @@ public class AddQueue extends javax.swing.JFrame {
         setTitle("Add Queue");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,6 +108,11 @@ public class AddQueue extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Add");
         jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jComboBox4.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -160,8 +176,13 @@ public class AddQueue extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        controller.setAddQueueComboBox(jComboBox4, jComboBox1.getSelectedItem().toString());
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //controller.addQueue(jTextField1.getText(), jComboBox1.getSelectedItem().toString(), jComboBox4.getSelectedItem().toString(), jComboBox3.getSelectedItem().toString(), jTextArea1.getText());
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

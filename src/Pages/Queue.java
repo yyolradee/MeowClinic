@@ -5,6 +5,8 @@
 package Pages;
 
 import Controllers.PageController.QueueController;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -13,6 +15,7 @@ import Controllers.PageController.QueueController;
 public class Queue extends javax.swing.JPanel {
 
     private QueueController controller;
+    private boolean addQueueOpened;
     /**
      * Creates new form Page1
      */
@@ -113,7 +116,7 @@ public class Queue extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor());
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new Renderer.ButtonRenderer("Accept"));
             jTable1.getColumnModel().getColumn(6).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.ButtonEditor());
+            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.CancelEditor(this.controller));
             jTable1.getColumnModel().getColumn(6).setCellRenderer(new Renderer.ButtonRenderer("Cancel"));
         }
         jTable1.getAccessibleContext().setAccessibleDescription("");
@@ -161,7 +164,16 @@ public class Queue extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.addQueue();
+        if(!addQueueOpened){
+            Popup.AddQueue addQueue = new Popup.AddQueue(this.controller);
+            addQueueOpened = true;
+            addQueue.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent event){
+                    addQueueOpened = false;
+                }
+            });
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public javax.swing.JTable getJTable1(){
