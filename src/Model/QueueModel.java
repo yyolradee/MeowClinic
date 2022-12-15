@@ -27,7 +27,7 @@ public class QueueModel {
                 Pet pet = new Pet(rec.getInt("pets.id"), rec.getInt("pets.customer_id"), rec.getString("pets.name"), rec.getDouble("pets.weight"), rec.getString("pets.color"), rec.getString("pets.type"), rec.getString("pets.species"));
                 Customer cus = new Customer(rec.getInt("customers.id"), rec.getString("customers.firstName"), rec.getString("customers.lastName"), rec.getString("customers.phone"));
                 User user = new User(rec.getInt("users.id"), rec.getString("users.displayName"), rec.getString("users.username"));
-                queue.add(new Queue(rec.getInt("queues.id"), rec.getString("queues.time"), cus, pet, user));
+                queue.add(new Queue(rec.getInt("queues.id"), rec.getString("queues.time"), cus, pet, user, rec.getString("queues.description")));
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
@@ -45,7 +45,7 @@ public class QueueModel {
                 Pet pet = new Pet(rec.getInt("pets.id"), rec.getInt("pets.customer_id"), rec.getString("pets.name"), rec.getDouble("pets.weight"), rec.getString("pets.color"), rec.getString("pets.type"), rec.getString("pets.species"));
                 Customer cus = new Customer(rec.getInt("customers.id"), rec.getString("customers.firstName"), rec.getString("customers.lastName"), rec.getString("customers.phone"));
                 User user = new User(rec.getInt("users.id"), rec.getString("users.displayName"), rec.getString("users.username"));
-                return new Queue(rec.getInt("queues.id"), rec.getString("queues.time"), cus, pet, user);
+                return new Queue(rec.getInt("queues.id"), rec.getString("queues.time"), cus, pet, user, rec.getString("queues.description"));
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
@@ -54,14 +54,15 @@ public class QueueModel {
         return null;
     }
 
-    public Queue addQueue(String time, int customer_id, int pet_id, int user_id) {
+    public Queue addQueue(String time, int customer_id, int pet_id, int user_id, String description) {
         try {
-            String sql = "INSERT INTO queues (time,customer_id,pet_id,user_id) values (?, ?, ?, ?)";
+            String sql = "INSERT INTO queues (time,customer_id,pet_id,user_id,description) values (?, ?, ?, ?, ?)";
             PreparedStatement pre = Database.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pre.setString(1, time);
             pre.setInt(2, customer_id);
             pre.setInt(3, pet_id);
             pre.setInt(4, user_id);
+            pre.setString(5, description);
             pre.executeUpdate();
             ResultSet rec = pre.getGeneratedKeys();
             if ((rec != null) && (rec.next())) {

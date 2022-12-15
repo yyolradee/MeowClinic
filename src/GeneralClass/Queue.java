@@ -15,17 +15,19 @@ public class Queue {
     private Customer customer;
     private Pet pet;
     private User user;
+    private String description;
 
     public Queue() {
-        this(0, "", null, null, null);
+        this(0, "", null, null, null, "");
     }
 
-    public Queue(int id, String time, Customer customer, Pet pet, User user) {
+    public Queue(int id, String time, Customer customer, Pet pet, User user, String description) {
         this.id = id;
         this.time = time;
         this.customer = customer;
         this.pet = pet;
         this.user = user;
+        this.description = description;
     }
 
     public void setID(int id) {
@@ -66,6 +68,14 @@ public class Queue {
 
     public User getUser() {
         return this.user;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
 }
