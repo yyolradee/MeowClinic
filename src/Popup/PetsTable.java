@@ -4,17 +4,29 @@
  */
 package Popup;
 
+import Controllers.PageController.RecordsController;
+import GeneralClass.Customer;
+
 /**
  *
  * @author fresh
  */
 public class PetsTable extends javax.swing.JFrame {
 
+    private RecordsController controller;
+    private Customer customer;
     /**
      * Creates new form PetsTable
+     * @param customer
+     * @param controller
      */
-    public PetsTable() {
+    public PetsTable(Customer customer, RecordsController controller) {
         initComponents();
+        this.customer = customer;
+        this.controller = controller;
+        controller.setPetsTable(this.customer, this.jTable1);
+        this.jLabel1.setText(customer.getFirstName() + " " + customer.getLastName() + "'s Pet(s)");
+        this.setVisible(true);
     }
 
     /**
@@ -33,7 +45,8 @@ public class PetsTable extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(108, 118, 234));
 
@@ -97,7 +110,7 @@ public class PetsTable extends javax.swing.JFrame {
         jTable1.getTableHeader().setDefaultRenderer(new Renderer.MeowTableHeaderRenderer());
         jTable1.getTableHeader().setBackground(new java.awt.Color(108, 118, 234));
         jTable1.setGridColor(new java.awt.Color(204, 204, 204));
-        jTable1.setSelectionBackground(new java.awt.Color(108, 118, 234));
+        jTable1.setSelectionBackground(new java.awt.Color(158, 165, 241));
         jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
@@ -146,7 +159,7 @@ public class PetsTable extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    //public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -154,12 +167,12 @@ public class PetsTable extends javax.swing.JFrame {
          */
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PetsTable().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

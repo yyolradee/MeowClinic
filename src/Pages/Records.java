@@ -4,16 +4,20 @@
  */
 package Pages;
 
+import Controllers.PageController.RecordsController;
+
 /**
  *
  * @author pongp
  */
 public class Records extends javax.swing.JPanel {
 
+    private RecordsController controller;
     /**
      * Creates new form Page1
      */
-    public Records() {
+    public Records(RecordsController controller) {
+        this.controller = controller;
         initComponents();
     }
 
@@ -98,10 +102,10 @@ public class Records extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.ButtonEditor());
+            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.PetsTableEditor(this.controller));
             jTable1.getColumnModel().getColumn(4).setCellRenderer(new Renderer.ButtonRenderer("View Pets"));
             jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor());
+            jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.DeleteEditor(this.controller));
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new Renderer.ButtonRenderer("Delete"));
         }
 

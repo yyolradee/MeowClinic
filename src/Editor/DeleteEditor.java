@@ -5,6 +5,7 @@
 package Editor;
 
 import Controllers.PageController.QueueController;
+import Controllers.PageController.RecordsController;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,11 +15,11 @@ import javax.swing.JTable;
  *
  * @author puttipongbunreangsri
  */
-public class CancelEditor extends ButtonEditor implements ActionListener{
-    private int queue_id;
-    private QueueController controller;
+public class DeleteEditor extends ButtonEditor implements ActionListener{
+    private int record_id;
+    private RecordsController controller;
     
-    public CancelEditor(QueueController controller){
+    public DeleteEditor(RecordsController controller){
         super();
         button.addActionListener(this);
         this.controller = controller;
@@ -26,7 +27,7 @@ public class CancelEditor extends ButtonEditor implements ActionListener{
     
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-        queue_id = (int) value;
+        record_id = (int) value;
         button.setText("Cancel");
         isPushed = true;
         return button;
@@ -34,6 +35,6 @@ public class CancelEditor extends ButtonEditor implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        controller.delQueue(queue_id);
+        controller.delCustomer(record_id);
     }
 }
