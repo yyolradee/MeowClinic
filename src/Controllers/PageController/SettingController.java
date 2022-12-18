@@ -12,7 +12,10 @@ import Layouts.SettingPageName;
 import Model.SettingModel;
 import Pages.Setting;
 import Popup.ChangePassword;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -36,6 +39,7 @@ public class SettingController extends Router implements Controller {
         this.lc = lc;
         
         changeRoute("SettingPageName");
+        this.setAccountTable(settingModel.getUsers(), (JTable) settingPageAccount.getJTable1());
     }
 
     @Override
@@ -91,4 +95,11 @@ public class SettingController extends Router implements Controller {
         }
     }
 
+    public void setAccountTable(LinkedList<GeneralClass.User> userList, JTable table){
+        
+        for(int i = 0; i < userList.size(); i++){
+            javax.swing.table.DefaultTableModel model = (DefaultTableModel) table.getModel();
+            model.addRow(new Object[]{userList.get(i).getID(), userList.get(i).getDisplayName(), userList.get(i).getUserName()});
+        }
+    }
 }
