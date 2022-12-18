@@ -31,7 +31,7 @@ public class SettingPageAccount extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(217, 217, 217));
+        setBackground(new java.awt.Color(247, 247, 247));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(108, 118, 234), 2));
 

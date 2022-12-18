@@ -12,6 +12,7 @@ import Layouts.SettingPageName;
 import Model.SettingModel;
 import Pages.Setting;
 import Popup.ChangePassword;
+import java.awt.Color;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -90,8 +91,12 @@ public class SettingController extends Router implements Controller {
         name = name.toLowerCase();
         if (name.equals(getClassName(settingPageName))) {
             replacePanel(this.setting.getPanel(), settingPageName);
+            setting.getButAcc().setBackground(new Color(158,165,241));
+            setting.getButDisName().setBackground(new Color(247,247,247));
         } else if (name.equals(getClassName(settingPageAccount))) {
             replacePanel(this.setting.getPanel(), settingPageAccount);
+            setting.getButAcc().setBackground(new Color(247,247,247));
+            setting.getButDisName().setBackground(new Color(158,165,241));
         }
     }
 

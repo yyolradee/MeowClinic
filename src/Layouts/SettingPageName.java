@@ -80,11 +80,10 @@ public class SettingPageName extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         passwordf = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(217, 217, 217));
+        setBackground(new java.awt.Color(247, 247, 247));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username");
 
         usernamef.setEditable(false);
@@ -99,12 +98,10 @@ public class SettingPageName extends javax.swing.JPanel {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Display Name");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
 
         displaynamef.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
