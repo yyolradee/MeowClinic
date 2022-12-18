@@ -32,7 +32,7 @@ public class RecordsController implements Controller {
         javax.swing.table.DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) table.getModel();
         dtm.setRowCount(0);
         for(int i = 0; i < customers.size(); i++){
-            dtm.addRow(new Object[]{i+1, customers.get(i).getFirstName() + customers.get(i).getLastName(), customers.get(i).getPhone(), customers.get(i).getPets().size(), customers.get(i), customers.get(i).getID()});
+            dtm.addRow(new Object[]{i+1, customers.get(i).getFirstName() + " " + customers.get(i).getLastName(), customers.get(i).getPhone(), customers.get(i).getPets().size(), customers.get(i), customers.get(i).getID()});
         }
     }
     

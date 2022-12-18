@@ -48,7 +48,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         jTextField2.setBackground(new java.awt.Color(217, 217, 217));
-        jTextField2.setText("SureName");
+        jTextField2.setText("Surname");
         jTextField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
 
         jTextField3.setBackground(new java.awt.Color(217, 217, 217));

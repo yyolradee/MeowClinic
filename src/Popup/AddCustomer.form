@@ -101,7 +101,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d9" green="d9" red="d9" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SureName"/>
+            <Property name="text" type="java.lang.String" value="Surname"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder bottom="1" left="10" right="1" top="1"/>
