@@ -4,6 +4,8 @@
  */
 package Layouts;
 
+import javax.swing.JTable;
+
 /**
  *
  * @author fresh
@@ -81,7 +83,7 @@ public class SettingPageAccount extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    public Object getJTable1() {
+    public JTable getJTable1() {
         return this.jTable1;
     }
 }

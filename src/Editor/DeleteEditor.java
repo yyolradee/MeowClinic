@@ -21,14 +21,14 @@ public class DeleteEditor extends ButtonEditor implements ActionListener{
     
     public DeleteEditor(RecordsController controller){
         super();
-        button.addActionListener(this);
         this.controller = controller;
+        button.addActionListener(this);
     }
     
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         record_id = (int) value;
-        button.setText("Cancel");
+        button.setText("Delete");
         isPushed = true;
         return button;
     }
@@ -36,5 +36,6 @@ public class DeleteEditor extends ButtonEditor implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.delCustomer(record_id);
+        controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
     }
 }

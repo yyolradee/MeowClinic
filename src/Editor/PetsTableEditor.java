@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import javax.swing.JFrame;
 import javax.swing.JTable;
 
 /**
@@ -41,11 +40,12 @@ public class PetsTableEditor extends ButtonEditor implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(!isOpened){
             isOpened = true;
-            JFrame window = new Popup.PetsTable(customer, controller);
+            Popup.PetsTable window = new Popup.PetsTable(customer, controller);
             window.addWindowListener(new WindowAdapter(){
                 @Override
                 public void windowClosing(WindowEvent event){
                     isOpened = false;
+                    window.disposeAddPet();
                 }
             });
         }

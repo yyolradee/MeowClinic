@@ -6,6 +6,8 @@ package Popup;
 
 import Controllers.PageController.RecordsController;
 import GeneralClass.Customer;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -15,18 +17,27 @@ public class PetsTable extends javax.swing.JFrame {
 
     private RecordsController controller;
     private Customer customer;
+    private AddPet addPet;
+    private boolean isAddPetOpened;
+    
     /**
      * Creates new form PetsTable
      * @param customer
      * @param controller
      */
     public PetsTable(Customer customer, RecordsController controller) {
-        initComponents();
         this.customer = customer;
         this.controller = controller;
-        controller.setPetsTable(this.customer, this.jTable1);
+        initComponents();
+        controller.setPetsTable(controller.getModel().getCustomer(customer.getID()), this.jTable1);
         this.jLabel1.setText(customer.getFirstName() + " " + customer.getLastName() + "'s Pet(s)");
         this.setVisible(true);
+    }
+    
+    public void disposeAddPet(){
+        if(this.addPet != null){
+            this.addPet.dispose();
+        }
     }
 
     /**
@@ -55,6 +66,11 @@ public class PetsTable extends javax.swing.JFrame {
         jButton1.setText("AddPets");
         jButton1.setToolTipText("");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,7 +137,7 @@ public class PetsTable extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.ButtonEditor()
+            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.DeletePetEditor(customer, controller)
             );
             jTable1.getColumnModel().getColumn(6).setCellRenderer(new Renderer.ButtonRenderer("Delete")
             );
@@ -155,6 +171,22 @@ public class PetsTable extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(!isAddPetOpened){
+            isAddPetOpened = true;
+            AddPet window = new AddPet(customer, controller);
+            this.addPet = window;
+            window.addWindowListener(new WindowAdapter(){
+                @Override
+                public void windowClosed(WindowEvent event){
+                    isAddPetOpened = false;
+                    controller.setPetsTable(controller.getModel().getCustomer(customer.getID()), jTable1);
+                    controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
+                }
+            });
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

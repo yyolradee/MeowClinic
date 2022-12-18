@@ -88,6 +88,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -183,7 +186,7 @@
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                       <Title/>
                       <Editor editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                        <Connection code="new Editor.ButtonEditor()&#xa;" type="code"/>
+                        <Connection code="new Editor.DeletePetEditor(customer, controller)&#xa;" type="code"/>
                       </Editor>
                       <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                         <Connection code="new Renderer.ButtonRenderer(&quot;Delete&quot;)&#xa;" type="code"/>

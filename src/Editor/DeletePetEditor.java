@@ -4,7 +4,8 @@
  */
 package Editor;
 
-import Controllers.PageController.QueueController;
+import Controllers.PageController.RecordsController;
+import GeneralClass.Customer;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,27 +15,32 @@ import javax.swing.JTable;
  *
  * @author puttipongbunreangsri
  */
-public class CancelEditor extends ButtonEditor implements ActionListener{
-    private int queue_id;
-    private QueueController controller;
+public class DeletePetEditor extends ButtonEditor implements ActionListener{
+    private int record_id;
+    private RecordsController controller;
+    private JTable petsTable;
+    private Customer customer;
     
-    public CancelEditor(QueueController controller){
+    public DeletePetEditor(Customer customer, RecordsController controller){
         super();
         button.addActionListener(this);
         this.controller = controller;
+        this.customer = customer;
     }
     
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-        queue_id = (int) value;
-        button.setText("Cancel");
+        record_id = (int) value;
+        petsTable = table;
+        button.setText("Delete");
         isPushed = true;
         return button;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        controller.delQueue(queue_id);
-        controller.setQueueTable();
+        controller.delPet(record_id);
+        controller.setPetsTable(controller.getModel().getCustomer(customer.getID()), petsTable);
+        controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
     }
 }
