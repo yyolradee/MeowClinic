@@ -28,13 +28,13 @@ public class CancelEditor extends ButtonEditor implements ActionListener{
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         queue_id = (int) value;
         button.setText("Cancel");
-        isPushed = true;
         return button;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.delQueue(queue_id);
+        this.stopCellEditing();
         controller.setQueueTable();
     }
 }

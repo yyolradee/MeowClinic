@@ -32,7 +32,6 @@ public class PetsTableEditor extends ButtonEditor implements ActionListener{
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         customer = (Customer) value;
         button.setText("View Pets");
-        isPushed = true;
         return button;
     }
 

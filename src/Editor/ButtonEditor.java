@@ -14,7 +14,6 @@ public class ButtonEditor extends DefaultCellEditor {
 
     protected JButton button;
     protected String label;
-    protected boolean isPushed;
 
     public ButtonEditor() {
         super(new JCheckBox());
@@ -25,22 +24,12 @@ public class ButtonEditor extends DefaultCellEditor {
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         label = value.toString();
         button.setText(label);
-        isPushed = true;
         return button;
     }
 
     @Override
     public Object getCellEditorValue() {
-        if (isPushed) {
-            
-        }
-        isPushed = false;
         return label;
     }
-
-    @Override
-    public boolean stopCellEditing() {
-        isPushed = false;
-        return super.stopCellEditing();
-    }
+    
 }

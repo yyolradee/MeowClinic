@@ -21,9 +21,10 @@ public class DeletePetEditor extends ButtonEditor implements ActionListener{
     private JTable petsTable;
     private Customer customer;
     
-    public DeletePetEditor(Customer customer, RecordsController controller){
+    public DeletePetEditor(Customer customer, RecordsController controller, JTable petsTable){
         super();
         button.addActionListener(this);
+        this.petsTable = petsTable;
         this.controller = controller;
         this.customer = customer;
     }
@@ -31,15 +32,14 @@ public class DeletePetEditor extends ButtonEditor implements ActionListener{
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         record_id = (int) value;
-        petsTable = table;
         button.setText("Delete");
-        isPushed = true;
         return button;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.delPet(record_id);
+        this.stopCellEditing();
         controller.setPetsTable(controller.getModel().getCustomer(customer.getID()), petsTable);
         controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
     }

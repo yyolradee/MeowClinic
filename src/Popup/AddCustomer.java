@@ -4,16 +4,21 @@
  */
 package Popup;
 
+import Controllers.PageController.RecordsController;
+
 /**
  *
  * @author fresh
  */
 public class AddCustomer extends javax.swing.JFrame {
 
+    RecordsController controller;
     /**
      * Creates new form AddCustomer
+     * @param controller
      */
-    public AddCustomer() {
+    public AddCustomer(RecordsController controller) {
+        this.controller = controller;
         initComponents();
         this.setVisible(true);
     }
@@ -107,7 +112,8 @@ public class AddCustomer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        controller.addCustomer(jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

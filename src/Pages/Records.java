@@ -5,6 +5,8 @@
 package Pages;
 
 import Controllers.PageController.RecordsController;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -13,6 +15,7 @@ import Controllers.PageController.RecordsController;
 public class Records extends javax.swing.JPanel {
 
     private RecordsController controller;
+    private boolean isAddCustomerOpened;
     /**
      * Creates new form Page1
      * @param controller
@@ -58,6 +61,11 @@ public class Records extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Add Record");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(108, 118, 234));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,6 +159,19 @@ public class Records extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         controller.setRecordTable(controller.getModel().getCustomers(), jTable1);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(!isAddCustomerOpened){
+            isAddCustomerOpened = true;
+            Popup.AddCustomer window = new Popup.AddCustomer(controller);
+            window.addWindowListener(new WindowAdapter(){
+                @Override
+                public void windowClosed(WindowEvent event){
+                    isAddCustomerOpened = false;
+                }
+            });
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     public javax.swing.JTable getJTable1(){
         return this.jTable1;

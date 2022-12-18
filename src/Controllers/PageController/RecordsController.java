@@ -29,11 +29,16 @@ public class RecordsController implements Controller {
     }
     
     public void setRecordTable(java.util.LinkedList<GeneralClass.Customer> customers, javax.swing.JTable table){
-        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) table.getModel();
-        model.setRowCount(0);
+        javax.swing.table.DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) table.getModel();
+        dtm.setRowCount(0);
         for(int i = 0; i < customers.size(); i++){
-            model.addRow(new Object[]{i+1, customers.get(i).getFirstName() + customers.get(i).getLastName(), customers.get(i).getPhone(), customers.get(i).getPets().size(), customers.get(i)});
+            dtm.addRow(new Object[]{i+1, customers.get(i).getFirstName() + customers.get(i).getLastName(), customers.get(i).getPhone(), customers.get(i).getPets().size(), customers.get(i), customers.get(i).getID()});
         }
+    }
+    
+    public void addCustomer(String fname, String lname, String phone){
+        model.addCustomer(fname, lname, phone);
+        this.setRecordTable(model.getCustomers(), record.getJTable1());
     }
     
     public void delCustomer(int id){
