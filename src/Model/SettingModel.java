@@ -65,7 +65,6 @@ public class SettingModel {
             rec = Database.getStatement().executeQuery(sql);
             while ((rec != null) && (rec.next())) {
                 users.add(new User(rec.getInt("id"), rec.getString("username"), rec.getString("displayName"), rec.getString("password")));
-                System.out.println(rec.getInt("id") + " " + rec.getString("username") + " " + rec.getString("displayName") + " " + rec.getString("password"));
             }
         } catch (SQLException ex) {
             System.out.println("err getUser");
