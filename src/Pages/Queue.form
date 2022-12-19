@@ -143,14 +143,13 @@
               <Font name="Helvetica Neue" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="0">
+              <Table columnCount="6" rowCount="0">
                 <Column editable="false" title="Appointment Time" type="java.lang.Object"/>
                 <Column editable="false" title="Customer Name" type="java.lang.Object"/>
                 <Column editable="false" title="Pet Name" type="java.lang.Object"/>
                 <Column editable="false" title="Tel" type="java.lang.Object"/>
                 <Column editable="true" title="Pet Details" type="java.lang.Object"/>
                 <Column editable="true" title="Accept" type="java.lang.Object"/>
-                <Column editable="true" title="Cancel" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -187,19 +186,10 @@
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                   <Title/>
                   <Editor editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                    <Connection code="new Editor.ButtonEditor()" type="code"/>
+                    <Connection code="new Editor.AcceptEditor(this.controller)&#xa;" type="code"/>
                   </Editor>
                   <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                     <Connection code="new Renderer.ButtonRenderer(&quot;Accept&quot;)" type="code"/>
-                  </Renderer>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
-                  <Editor editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                    <Connection code="new Editor.CancelEditor(this.controller)" type="code"/>
-                  </Editor>
-                  <Renderer editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                    <Connection code="new Renderer.ButtonRenderer(&quot;Cancel&quot;)" type="code"/>
                   </Renderer>
                 </Column>
               </TableColumnModel>

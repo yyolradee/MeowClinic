@@ -36,7 +36,7 @@ public class QueueController implements Controller {
         LinkedList<GeneralClass.Queue> queueList = model.getQueues();
         
         for(int i = 0; i < queueList.size(); i++){
-            dtm.addRow(new Object[]{queueList.get(i).getTime(), queueList.get(i).getCustomer().getFirstName() + " " + queueList.get(i).getCustomer().getLastName(), queueList.get(i).getPet().getName(), queueList.get(i).getCustomer().getPhone(), queueList.get(i), "Accept", queueList.get(i).getID()});
+            dtm.addRow(new Object[]{queueList.get(i).getTime(), queueList.get(i).getCustomer().getFirstName() + " " + queueList.get(i).getCustomer().getLastName(), queueList.get(i).getPet().getName(), queueList.get(i).getCustomer().getPhone(), queueList.get(i), queueList.get(i).getID()});
         }
     }
     
