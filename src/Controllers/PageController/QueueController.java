@@ -9,7 +9,9 @@ import GeneralClass.Customer;
 import GeneralClass.Pet;
 import Model.QueueModel;
 import Pages.Queue;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
@@ -46,18 +48,17 @@ public class QueueController implements Controller {
         LinkedList<GeneralClass.Customer> customerList = new Model.RecordModel().getCustomers();
         for(int i = 0; i < customerList.size(); i++){
             box1.addItem(customerList.get(i).getFirstName() + " " + customerList.get(i).getLastName() + " " + customerList.get(i).getID());
-            if(i == 0){
-                for(int j = 0; j < customerList.get(i).getPets().size(); j++){
-                    Pet currentPet = (Pet) customerList.get(i).getPets().get(j);
-                    box2.addItem(currentPet.getName() + " " + currentPet.getId());
-                }
-            }
+        }
+        LinkedList<GeneralClass.User> userList = new Model.SettingModel().getUsers();
+        for(int i = 0; i < userList.size(); i++){
+            box3.addItem(userList.get(i).getDisplayName() + " " + userList.get(i).getID());
         }
     }
     
     public void setAddQueueComboBox(JComboBox petBox, String customer_name){
         petBox.removeAllItems();
-        int customer_id = Integer.valueOf(customer_name.split(" ")[2]);
+        List<String> words = Arrays.asList(customer_name.split(" "));
+        int customer_id = Integer.valueOf(words.get(words.size() - 1));
         LinkedList<GeneralClass.Pet> petList = new Model.RecordModel().getCustomer(customer_id).getPets();
         for(int i = 0; i < petList.size(); i++){
             petBox.addItem(String.format("%s %d", petList.get(i).getName(), petList.get(i).getId()));

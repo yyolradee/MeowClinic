@@ -119,6 +119,8 @@ ick nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this t
 package Popup;
 
 import Controllers.PageController.QueueController;
+import java.util.Arrays;
+import java.util.List;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 /**
@@ -299,7 +301,13 @@ public class AddQueue extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.addQueue(jTextField1.getText(), Integer.valueOf(jComboBox1.getSelectedItem().toString().split(" ")[2]), Integer.valueOf(jComboBox4.getSelectedItem().toString().split(" ")[1]), 11, jTextArea1.getText());
+        List<String> words = Arrays.asList(jComboBox1.getSelectedItem().toString().split(" "));
+        int customer_id = Integer.valueOf(words.get(words.size() - 1));
+        words = Arrays.asList(jComboBox4.getSelectedItem().toString().split(" "));
+        int pet_id = Integer.valueOf(words.get(words.size() - 1));
+        words = Arrays.asList(jComboBox3.getSelectedItem().toString().split(" "));
+        int user_id = Integer.valueOf(words.get(words.size() - 1));
+        controller.addQueue(jTextField1.getText(), customer_id, pet_id, user_id, jTextArea1.getText());
         controller.setQueueTable();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
