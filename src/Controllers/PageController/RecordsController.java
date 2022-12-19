@@ -54,7 +54,7 @@ public class RecordsController implements Controller {
         }
     }
     
-    public void addPet(Customer customer, String name, int weight, String color, String type, String species){
+    public void addPet(Customer customer, String name, double weight, String color, String type, String species){
         model.addPet(customer.getID(), name, weight, color, type, species);
     }
     

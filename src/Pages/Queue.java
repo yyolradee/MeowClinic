@@ -169,7 +169,7 @@ public class Queue extends javax.swing.JPanel {
             addQueueOpened = true;
             addQueue.addWindowListener(new WindowAdapter() {
                 @Override
-                public void windowClosing(WindowEvent event){
+                public void windowClosed(WindowEvent event){
                     addQueueOpened = false;
                 }
             });

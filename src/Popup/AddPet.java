@@ -136,7 +136,7 @@ public class AddPet extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.addPet(customer, jTextField1.getText(), Integer.parseInt(weightf.getText()), colorf.getText(), jComboBox1.getSelectedItem().toString(), speciesf.getText());
+        controller.addPet(customer, jTextField1.getText(), Double.valueOf(weightf.getText()), colorf.getText(), jComboBox1.getSelectedItem().toString(), speciesf.getText());
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

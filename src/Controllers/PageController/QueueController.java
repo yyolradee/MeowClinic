@@ -5,6 +5,8 @@
 package Controllers.PageController;
 
 import Controllers.Controller;
+import GeneralClass.Customer;
+import GeneralClass.Pet;
 import Model.QueueModel;
 import Pages.Queue;
 import java.util.LinkedList;
@@ -36,30 +38,39 @@ public class QueueController implements Controller {
         }
     }
     
-    public void addQueue(String time, String customerName, String pet_id, int user_id, String description){
-        //model.addQueue(time, customer_id, pet_id, user_id, description);
+    public void addQueue(String time, int customer_id, int pet_id, int user_id, String description){
+        model.addQueue(time, customer_id, pet_id, user_id, description);
     }
     
     public void setAddQueueComboBox(JComboBox box1, JComboBox box2, JComboBox box3){
-        LinkedList<GeneralClass.Queue> queueList = model.getQueues();
-        for(int i = 0; i < queueList.size(); i++){
-            box1.addItem(queueList.get(i).getCustomer().getFirstName() + " " + queueList.get(i).getCustomer().getLastName());
+        LinkedList<GeneralClass.Customer> customerList = new Model.RecordModel().getCustomers();
+        for(int i = 0; i < customerList.size(); i++){
+            box1.addItem(customerList.get(i).getFirstName() + " " + customerList.get(i).getLastName() + " " + customerList.get(i).getID());
             if(i == 0){
-                for(int j = 0; j < queueList.get(i).getCustomer().getPets().size(); j++){
-                    box2.addItem(queueList.get(i).getCustomer().getPets().get(j));
+                for(int j = 0; j < customerList.get(i).getPets().size(); j++){
+                    Pet currentPet = (Pet) customerList.get(i).getPets().get(j);
+                    box2.addItem(currentPet.getName() + " " + currentPet.getId());
                 }
             }
         }
     }
     
     public void setAddQueueComboBox(JComboBox petBox, String customer_name){
-        LinkedList<GeneralClass.Queue> queueList = model.getQueues();
-        customer_name = customer_name.split(" ")[0];
-        for(int i = 0; i < queueList.size(); i++){
-            if(queueList.get(i).getCustomer().getFirstName().equals(customer_name)){
-                
-            }
+        petBox.removeAllItems();
+        int customer_id = Integer.valueOf(customer_name.split(" ")[2]);
+        LinkedList<GeneralClass.Pet> petList = new Model.RecordModel().getCustomer(customer_id).getPets();
+        for(int i = 0; i < petList.size(); i++){
+            petBox.addItem(String.format("%s %d", petList.get(i).getName(), petList.get(i).getId()));
         }
+    }
+    
+    public LinkedList<String> getCustomerNames(){
+        LinkedList<String> names = new LinkedList();
+        LinkedList<Customer> customers = new Model.RecordModel().getCustomers();
+        for(int i = 0; i < customers.size(); i++){
+            names.add(String.format("%s %s %d", customers.get(i).getFirstName(), customers.get(i).getLastName(), customers.get(i).getID()));
+        }
+        return names;
     }
     
     public void delQueue(int id){
