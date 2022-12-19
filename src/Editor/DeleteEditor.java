@@ -39,6 +39,6 @@ public class DeleteEditor extends ButtonEditor implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         controller.delCustomer(record_id);
         this.stopCellEditing();
-        controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
+        controller.setRecordTable();
     }
 }

@@ -25,10 +25,12 @@ public class RecordsController implements Controller {
     public RecordsController() {
         record = new Records(this);
         model = new RecordModel();
-        this.setRecordTable(model.getCustomers(), record.getJTable1());
+        this.setRecordTable();
     }
     
-    public void setRecordTable(java.util.LinkedList<GeneralClass.Customer> customers, javax.swing.JTable table){
+    public void setRecordTable(){
+        LinkedList<Customer> customers = model.getCustomers();
+        JTable table = record.getJTable1();
         javax.swing.table.DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) table.getModel();
         dtm.setRowCount(0);
         for(int i = 0; i < customers.size(); i++){
@@ -38,7 +40,7 @@ public class RecordsController implements Controller {
     
     public void addCustomer(String fname, String lname, String phone){
         model.addCustomer(fname, lname, phone);
-        this.setRecordTable(model.getCustomers(), record.getJTable1());
+        this.setRecordTable();
     }
     
     public void delCustomer(int id){

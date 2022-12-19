@@ -182,7 +182,7 @@ public class PetsTable extends javax.swing.JFrame {
                 public void windowClosed(WindowEvent event){
                     isAddPetOpened = false;
                     controller.setPetsTable(controller.getModel().getCustomer(customer.getID()), jTable1);
-                    controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
+                    controller.setRecordTable();
                 }
             });
         }

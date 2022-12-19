@@ -41,6 +41,6 @@ public class DeletePetEditor extends ButtonEditor implements ActionListener{
         controller.delPet(record_id);
         this.stopCellEditing();
         controller.setPetsTable(controller.getModel().getCustomer(customer.getID()), petsTable);
-        controller.setRecordTable(controller.getModel().getCustomers(), controller.getRecord().getJTable1());
+        controller.setRecordTable();
     }
 }

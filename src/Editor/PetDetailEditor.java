@@ -4,6 +4,7 @@
  */
 package Editor;
 
+import Controllers.PageController.QueueController;
 import GeneralClass.Queue;
 import Popup.PetDetail;
 import java.awt.Component;
@@ -20,10 +21,12 @@ import javax.swing.JTable;
  */
 public class PetDetailEditor extends ButtonEditor implements ActionListener{
     private Queue queue;
+    private QueueController controller;
     private boolean isOpened;
     
-    public PetDetailEditor(){
+    public PetDetailEditor(QueueController controller){
         super();
+        this.controller = controller;
         button.addActionListener(this);
     }
     
@@ -46,5 +49,7 @@ public class PetDetailEditor extends ButtonEditor implements ActionListener{
                 }
             });
         }
+        this.stopCellEditing();
+        this.controller.setQueueTable();
     }
 }

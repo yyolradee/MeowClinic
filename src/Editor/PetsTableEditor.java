@@ -48,5 +48,7 @@ public class PetsTableEditor extends ButtonEditor implements ActionListener{
                 }
             });
         }
+        this.stopCellEditing();
+        this.controller.setRecordTable();
     }
 }

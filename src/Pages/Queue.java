@@ -110,7 +110,7 @@ public class Queue extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.PetDetailEditor());
+            jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.PetDetailEditor(this.controller));
             jTable1.getColumnModel().getColumn(4).setCellRenderer(new Renderer.ButtonRenderer("View"));
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor());
