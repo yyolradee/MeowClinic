@@ -77,6 +77,7 @@ public class SettingController extends Router implements Controller {
         LayoutController.getUser().setDisplayName(settingPageName.getDisplaynamef().getText());
         settingPageName.getDisplaynamef().setText(LayoutController.getUser().getDisplayName());
         JOptionPane.showMessageDialog(null, "Displayname changed.", "", JOptionPane.PLAIN_MESSAGE);
+        this.setAccountTable(settingModel.getUsers(), (JTable) settingPageAccount.getJTable1());
     }
     
     public void deleteAcc(){
@@ -84,6 +85,7 @@ public class SettingController extends Router implements Controller {
         LayoutController.setUser(null);
         lc.changeRoute("AuthLayout");
         JOptionPane.showMessageDialog(null, "Your account have been deleted.", "", JOptionPane.PLAIN_MESSAGE);
+        this.setAccountTable(settingModel.getUsers(), (JTable) settingPageAccount.getJTable1());
     }
 
     @Override
@@ -101,9 +103,10 @@ public class SettingController extends Router implements Controller {
     }
 
     public void setAccountTable(LinkedList<GeneralClass.User> userList, JTable table){
+        javax.swing.table.DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0);
         
         for(int i = 0; i < userList.size(); i++){
-            javax.swing.table.DefaultTableModel model = (DefaultTableModel) table.getModel();
             model.addRow(new Object[]{userList.get(i).getID(), userList.get(i).getDisplayName(), userList.get(i).getUserName()});
         }
     }
