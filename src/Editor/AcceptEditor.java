@@ -14,11 +14,11 @@ import javax.swing.JTable;
  *
  * @author puttipongbunreangsri
  */
-public class CancelEditor extends ButtonEditor implements ActionListener{
+public class AcceptEditor extends ButtonEditor implements ActionListener{
     private int queue_id;
     private QueueController controller;
     
-    public CancelEditor(QueueController controller){
+    public AcceptEditor(QueueController controller){
         super();
         button.addActionListener(this);
         this.controller = controller;
@@ -27,7 +27,7 @@ public class CancelEditor extends ButtonEditor implements ActionListener{
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         queue_id = (int) value;
-        button.setText("Cancel");
+        button.setText("Accept");
         return button;
     }
 

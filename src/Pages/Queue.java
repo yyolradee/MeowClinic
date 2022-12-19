@@ -84,11 +84,11 @@ public class Queue extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Appointment Time", "Customer Name", "Pet Name", "Tel", "Pet Details", "Accept", "Cancel"
+                "Appointment Time", "Customer Name", "Pet Name", "Tel", "Pet Details", "Accept"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, true
+                false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -113,11 +113,9 @@ public class Queue extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(4).setCellEditor(new Editor.PetDetailEditor(this.controller));
             jTable1.getColumnModel().getColumn(4).setCellRenderer(new Renderer.ButtonRenderer("View"));
             jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.ButtonEditor());
+            jTable1.getColumnModel().getColumn(5).setCellEditor(new Editor.AcceptEditor(this.controller)
+            );
             jTable1.getColumnModel().getColumn(5).setCellRenderer(new Renderer.ButtonRenderer("Accept"));
-            jTable1.getColumnModel().getColumn(6).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setCellEditor(new Editor.CancelEditor(this.controller));
-            jTable1.getColumnModel().getColumn(6).setCellRenderer(new Renderer.ButtonRenderer("Cancel"));
         }
         jTable1.getAccessibleContext().setAccessibleDescription("");
 
