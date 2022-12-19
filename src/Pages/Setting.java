@@ -70,6 +70,7 @@ public class Setting extends javax.swing.JPanel{
         jLabel1.setText("Setting");
 
         jPanel1.setBackground(new java.awt.Color(158, 165, 241));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(108, 118, 234), 3));
 
         ButDisName.setBackground(new java.awt.Color(247, 247, 247));
         ButDisName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -124,7 +125,7 @@ public class Setting extends javax.swing.JPanel{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(977, Short.MAX_VALUE))
+                .addContainerGap(974, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +134,7 @@ public class Setting extends javax.swing.JPanel{
                 .addComponent(jLabel1)
                 .addGap(60, 60, 60)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
