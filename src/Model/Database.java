@@ -23,9 +23,12 @@ public class Database {
 
     public Database() {
         if (statement == null) {
-            hostName = "jdbc:mysql://remotemysql.com/9fslco4p28";
-            username = "9fslco4p28";
-            password = "w0OBdIk9SV";
+            hostName = "jdbc:mysql://localhost/meowclinic";
+            username = "root";
+            password = "";
+//            hostName = "jdbc:mysql://remotemysql.com/9fslco4p28";
+//            username = "9fslco4p28";
+//            password = "w0OBdIk9SV";
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
