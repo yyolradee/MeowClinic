@@ -41,7 +41,7 @@ public class AuthController extends Router implements Controller {
         return this.authLayout;
     }
 
-    public void SignUp(String username, String password) {
+    public void SignIn(String username, String password) {
         signin.setError("");
         User userLogin = auth.checkUsernameAndPassword(username, password);
         LayoutController.setUser(userLogin);
@@ -53,7 +53,7 @@ public class AuthController extends Router implements Controller {
         }
     }
 
-    public void SignIn(String displayName, String username, String password, String confirmPassword) {
+    public void SignUp(String displayName, String username, String password, String confirmPassword) {
         signup.setError("");
         if (displayName.equals("") || username.equals("") || password.equals("") || confirmPassword.equals("")) {
             signup.setError("Error: please fill out the form");
